@@ -1,10 +1,17 @@
 import React from 'react'
+import SustainabilityHero from '../../components/sustainability/Sustainability-hero'
+import SustainabilityBento from '../../components/sustainability/Sustainability-bento'
+import SolarToSocket from '../../components/sustainability/SolarToSocket'
+import GlobalAlignment from '../../components/sustainability/GlobalAlignment'
 
 const page = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <SustainabilityHero />
+      <SustainabilityBento />
+      <SolarToSocket />
+      <GlobalAlignment />
+    </>
   )
 }
 

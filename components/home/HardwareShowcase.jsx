@@ -29,9 +29,7 @@ const hotspots = [
 
 const HardwareShowcase = () => {
   const [active, setActive] = useState(hotspots[0]);
-  const containerRef = useRef(null);
 
-  // Mouse tilt effect for 3D feel
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e) => {
     const { clientX, clientY, currentTarget } = e;

@@ -34,7 +34,7 @@ const FleetShowcase = () => {
   const prev = () => setIndex((prev) => (prev - 1 + fleet.length) % fleet.length);
 
   return (
-    <section className="relative h-screen w-full bg-gray-950 flex flex-col overflow-hidden font-sans">
+    <section className="relative h-screen w-full bg-gray-950 flex flex-col overflow-hidden font-sans py-2">
       
       {/* 1. TACTICAL HEADER */}
       <div className="z-20 flex justify-between items-center px-6 md:px-12 pt-8 border-b border-white/5 bg-gray-950/50 backdrop-blur-md">
@@ -75,7 +75,7 @@ const FleetShowcase = () => {
       <div className="flex-grow flex flex-col md:grid md:grid-cols-12 relative">
         
         {/* Left: Metadata Panel */}
-        <div className="md:col-span-4 flex flex-col justify-center px-6 md:px-12 py-10 z-20">
+        <div className="md:col-span-4 flex flex-col justify-center px-6 py-10 z-20">
           <AnimatePresence mode="wait">
             <motion.div
               key={fleet[index].name}
@@ -88,7 +88,7 @@ const FleetShowcase = () => {
                 <span className="text-lime-500 font-mono text-[10px] font-bold uppercase tracking-widest bg-lime-500/10 px-2 py-1 rounded">
                   {fleet[index].tier}
                 </span>
-                <h3 className="text-5xl md:text-7xl font-black text-white uppercase italic leading-[0.8] mt-6 tracking-tighter">
+                <h3 className="text-5xl md:text-6xl font-black text-white uppercase italic leading-[0.8] mt-6 tracking-tighter">
                   {fleet[index].name}
                 </h3>
                 <p className="text-gray-500 font-bold text-xs uppercase mt-4 tracking-widest">

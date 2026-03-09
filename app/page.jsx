@@ -12,7 +12,6 @@ import HomeAbout from '../components/home/HomeAbout'
 const page = () => {
   return (
     <>
-      <Navbar />
       <HeroBanner />
       <FourPillars />
       <HardwareShowcase />

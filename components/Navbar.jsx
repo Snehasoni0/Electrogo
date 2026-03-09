@@ -76,7 +76,7 @@ export default function Navbar() {
             <Link className="hover:text-blue-400 transition" href="/sustainability-impact">
               Sustainability
             </Link>
-            <Link className="hover:text-blue-400 transition" href="/roadmap-2028">
+            <Link className="hover:text-blue-400 transition" href="/roadmap-2026">
               Roadmap
             </Link>
             <Link className="hover:text-blue-400 transition" href="/partner-with-us">
@@ -97,7 +97,6 @@ export default function Navbar() {
           >
             Contact
           </Link>
-
           {/* Hamburger */}
           <button
             className="md:hidden relative z-[1000] text-3xl text-white 
@@ -126,7 +125,7 @@ export default function Navbar() {
             ["Charging Network", "/ev-charging-network"],
             ["Electric Bus", "/electric-bus-division"],
             ["Sustainability", "/sustainability-impact"],
-            ["Roadmap", "/roadmap-2028"],
+            ["Roadmap", "/roadmap-2026"],
             ["Partner", "/partner-with-us"],
             ["Careers", "/careers"]
           ].map(([name, link]) => (

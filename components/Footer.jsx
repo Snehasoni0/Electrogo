@@ -17,17 +17,17 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-lime-400 transition">
+                <Link href="/about" className="flex items-center gap-2 hover:text-lime-400 transition">
                   <Building2 size={16} /> About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-lime-400 transition">
+                <Link href="/careers" className="flex items-center gap-2 hover:text-lime-400 transition">
                   <Briefcase size={16} /> Careers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-lime-400 transition">
+                <Link href="/media-newsroom" className="flex items-center gap-2 hover:text-lime-400 transition">
                   <Newspaper size={16} /> Newsroom
                 </Link>
               </li>
@@ -40,22 +40,22 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-cyan-400 transition">
+                <Link href="/city-ev-cabs" className="flex items-center gap-2 hover:text-cyan-400 transition">
                   <Car size={16} /> Cabs
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-cyan-400 transition">
+                <Link href="/gov-enterprise-taxis" className="flex items-center gap-2 hover:text-cyan-400 transition">
                   <Car size={16} /> Govt Taxis
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-cyan-400 transition">
+                <Link href="/electric-bus-division" className="flex items-center gap-2 hover:text-cyan-400 transition">
                   <Bus size={16} /> Electric Bus
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-cyan-400 transition">
+                <Link href="/ev-charging-network" className="flex items-center gap-2 hover:text-cyan-400 transition">
                   <Zap size={16} /> Charging
                 </Link>
               </li>
@@ -68,17 +68,17 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-blue-400 transition">
+                <Link href="/privacy-terms" className="flex items-center gap-2 hover:text-blue-400 transition">
                   <Shield size={16} /> Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-blue-400 transition">
+                <Link href="/terms-of-services" className="flex items-center gap-2 hover:text-blue-400 transition">
                   <FileText size={16} /> Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-blue-400 transition">
+                <Link href="/safety-policy" className="flex items-center gap-2 hover:text-blue-400 transition">
                   <HeartHandshake size={16} /> Safety Policy
                 </Link>
               </li>

@@ -1,49 +1,51 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HeartHandshake, ShieldAlert, Zap, Truck, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Scale, ShieldCheck, Zap, AlertCircle, ArrowLeft, FileText } from 'lucide-react';
+import Link from 'next/link';
 
 const page = () => {
   const lastUpdated = "March 09, 2026";
 
   const sections = [
     {
-      id: "infrastructure",
+      id: "agreement",
+      icon: <FileText size={20} />,
+      title: "Agreement to Terms",
+      content: "By accessing Electrogo Mobility platforms, you agree to be bound by these Terms. This includes participation in our April 2026 Rajasthan rollout and use of our executive transit infrastructure."
+    },
+    {
+      id: "services",
       icon: <Zap size={20} />,
-      title: "Grid & Charger Safety",
-      content: "All charging stations in the Jaipur-Ajmer-Jodhpur corridor undergo rigorous 48-hour site audits to ensure electrical stability and fire safety compliance before being integrated into the public network."
+      title: "Service Scope",
+      content: "We provide EV transit solutions across the Jaipur-Ajmer-Jodhpur highway network. Services are subject to availability and the technical specifications of our charging infrastructure."
     },
     {
-      id: "drivers",
-      icon: <ShieldAlert size={20} />,
-      title: "Vetted Professionals",
-      content: "Our B2G and B2C drivers undergo intensive background checks and EV-specific safety training, ensuring the highest standards for Rajasthan's government executive transit services."
+      id: "partners",
+      icon: <ShieldCheck size={20} />,
+      title: "Partner Obligations",
+      content: "Partners hosting chargers or managing fleets must provide accurate location and utility data. Site audits conducted within 48 hours must be facilitated by the partner for grid synchronization."
     },
     {
-      id: "vehicles",
-      icon: <Truck size={20} />,
-      title: "Fleet Maintenance",
-      content: "Every electric cab and bus in our fleet is subject to real-time telematics monitoring. We track battery health and vehicle performance to prevent on-road failures across the Highway Electric Corridor."
-    },
-    {
-      id: "emergency",
-      icon: <HeartHandshake size={20} />,
-      title: "Rapid Response",
-      content: "In the event of an incident, our 24/7 command center provides immediate support. We coordinate with local authorities across Rajasthan to ensure the safety of our passengers and partners."
+      id: "liability",
+      icon: <AlertCircle size={20} />,
+      title: "Liability & Governance",
+      content: "Electrogo Mobility is governed by the laws of Rajasthan, India. We are not liable for grid outages or third-party vehicle maintenance beyond our executive cab and bus service protocols."
     }
   ];
 
   return (
     <div className="min-h-screen bg-white text-slate-700 font-sans selection:bg-lime-400 selection:text-black">
-      
 
+      {/* 2. HERO SECTION WITH IMAGE & OVERLAY */}
       <header className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1602449204748-331279a2ed37?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNhZmV0eXxlbnwwfHwwfHx8MA%3D%3D')` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[0.2]"
+          style={{ backgroundImage: `url('https://plus.unsplash.com/premium_photo-1661549683908-b11e9855c469?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UlVMRVN8ZW58MHx8MHx8fDA%3D')` }}
         />
         
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/70 to-white z-0" />
+        {/* Deep Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/60 to-white z-0" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
           <motion.h1 
@@ -51,25 +53,27 @@ const page = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-black text-white uppercase italic tracking-tighter leading-none mb-6"
           >
-            Safety <br />
-            <span className="text-white outline-text opacity-40">Protocols.</span>
+            Terms of <br />
+            <span className="text-white outline-text opacity-40">Service.</span>
           </motion.h1>
           <p className="text-lime-400 font-mono text-[10px] font-black uppercase tracking-[0.4em] drop-shadow-md">
-            Zero-Incident Roadmap: {lastUpdated}
+            Operational Protocol: {lastUpdated}
           </p>
         </div>
       </header>
 
+      {/* 3. CONTENT GRID */}
       <main className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 relative">
         
+        {/* Left: Summary Sidebar */}
         <aside className="lg:col-span-4 space-y-8">
           <div className="bg-slate-50 border border-slate-100 p-8 rounded-[2rem] sticky top-32 shadow-sm">
             <h3 className="text-slate-900 font-black uppercase italic tracking-widest text-sm mb-6 flex items-center gap-2">
-              <HeartHandshake size={16} className="text-lime-500" /> 
-              Our Promise
+              <Scale size={16} className="text-lime-500" /> 
+              Legal Framework
             </h3>
             <p className="text-xs leading-relaxed text-slate-500 mb-6 italic">
-              "Ensuring every kilometer of the April 2026 expansion is backed by state-of-the-art safety telematics."
+              "Governing the expansion of EV infrastructure across the Jodhpur-Jaipur corridor."
             </p>
             <div className="space-y-4">
               {sections.map((s) => (
@@ -82,6 +86,7 @@ const page = () => {
           </div>
         </aside>
 
+        {/* Right: Detailed Text */}
         <div className="lg:col-span-8 space-y-16">
           {sections.map((section, index) => (
             <motion.section 
@@ -109,8 +114,8 @@ const page = () => {
           
           <section className="pt-12 border-t border-slate-100">
             <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
-              Emergency Contact & SOS Support: <br />
-              <span className="text-slate-900">safety@electrogo.mobility</span>
+              Review our full B2G compliance roadmap at: <br />
+              <span className="text-slate-900">compliance@electrogo.mobility</span>
             </p>
           </section>
         </div>

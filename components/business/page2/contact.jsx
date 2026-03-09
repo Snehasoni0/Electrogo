@@ -5,24 +5,25 @@ import { Send, Landmark, UserCheck, ShieldCheck, Mail, FileText } from 'lucide-r
 
 const B2GContactForm = () => {
   return (
-    <section className="relative h-screen w-full bg-white flex items-center justify-center p-6 md:p-12 overflow-hidden font-sans">
+    /* Changed h-screen to min-h-screen to allow content to expand on mobile */
+    <section className="relative min-h-screen w-full bg-white flex items-center justify-center p-6 md:p-12 overflow-hidden font-sans">
       
       {/* BACKGROUND DECOR */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="h-full w-full" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center pt-12 pb-12">
         
         {/* LEFT: Official Briefing Context */}
-        <div className="hidden lg:flex flex-col space-y-10">
+        <div className="flex flex-col space-y-0">
           <div>
             <motion.div 
               initial={{ width: 0 }} 
               whileInView={{ width: "3.5rem" }} 
               className="h-1.5 bg-lime-500 mb-6" 
             />
-            <h2 className="text-6xl font-black text-slate-900 uppercase italic leading-[0.85] tracking-tighter">
+            <h2 className="text-5xl md:text-6xl font-black text-slate-900 uppercase italic leading-[0.85] tracking-tighter">
               Request a <br />
               <span className="text-lime-500 not-italic">Briefing.</span>
             </h2>
@@ -56,10 +57,7 @@ const B2GContactForm = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           className="relative p-[1px] rounded-[40px] overflow-hidden bg-gradient-to-br from-lime-500/20 to-transparent shadow-2xl"
         >
-          {/* Inner Content with Website Theme Gradient */}
           <div className="bg-gradient-to-br from-[#111827] via-[#030712] to-[#030712] p-8 md:p-12 rounded-[39px]">
-            
-            {/* Header */}
             <div className="mb-10 flex items-center justify-between border-b border-white/5 pb-6">
               <h3 className="text-white font-black uppercase italic text-xl tracking-tight">
                 Briefing Credentials
@@ -68,7 +66,6 @@ const B2GContactForm = () => {
 
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Department Name */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-black text-lime-500 uppercase tracking-widest ml-1">Department Name</label>
                   <div className="relative group">
@@ -81,7 +78,6 @@ const B2GContactForm = () => {
                   </div>
                 </div>
 
-                {/* Designation */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-black text-lime-500 uppercase tracking-widest ml-1">Official Designation</label>
                   <div className="relative group">
@@ -95,7 +91,6 @@ const B2GContactForm = () => {
                 </div>
               </div>
 
-              {/* Email */}
               <div className="space-y-2">
                 <label className="text-[10px] font-black text-lime-500 uppercase tracking-widest ml-1">Official Email Address</label>
                 <div className="relative group">
@@ -108,17 +103,14 @@ const B2GContactForm = () => {
                 </div>
               </div>
 
-              {/* CTA Button */}
               <button className="w-full group bg-lime-500 hover:bg-lime-400 text-black font-black uppercase italic tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_20px_40px_rgba(163,230,53,0.2)]">
                 Submit Briefing Request
                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
-              
             </form>
           </div>
         </motion.div>
       </div>
-
     </section>
   );
 };

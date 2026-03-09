@@ -34,23 +34,25 @@ const FleetFeaturesXray = () => {
   ];
 
   return (
-    <section className="relative h-screen w-full bg-gray-950 flex items-center justify-center py-20 px-6 md:px-12 overflow-hidden font-sans">
+    /* Changed to min-h-screen for mobile flexibility */
+    <section className="relative min-h-screen lg:h-screen w-full bg-gray-950 flex flex-col lg:flex-row items-center justify-center py-24 px-6 md:px-12 overflow-hidden font-sans">
       
-      {/* 1. SECTION LOGO / HEADER (Floating) */}
-      <div className="absolute top-12 left-12 z-20 flex items-center gap-4">
-        <div className="h-10 w-px bg-lime-500" />
+      {/* 1. SECTION LOGO / HEADER - Adjusted positioning for mobile */}
+      <div className="absolute top-8 left-6 md:top-12 md:left-12 z-20 flex items-center gap-4">
+        <div className="h-8 md:h-10 w-px bg-lime-500" />
         <div>
-          <p className="text-white font-black uppercase italic tracking-widest text-lg leading-none">Fleet Specs</p>
+          <p className="text-white font-black uppercase italic tracking-widest text-base md:text-lg leading-none">Fleet Specs</p>
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-12 lg:mt-0">
         
-        {/* LEFT: TACTICAL SELECTOR (5 Columns) */}
+        {/* LEFT: TACTICAL SELECTOR */}
         <div className="lg:col-span-5 space-y-4">
           {features.map((item, i) => (
             <motion.div
               key={i}
+              onClick={() => setActiveTab(i)} // Better for mobile interaction
               onMouseEnter={() => setActiveTab(i)}
               className={`cursor-pointer p-6 rounded-[24px] border transition-all duration-300 ${
                 activeTab === i 
@@ -75,10 +77,9 @@ const FleetFeaturesXray = () => {
           ))}
         </div>
 
-        {/* RIGHT: DATA VISUALIZER (7 Columns) */}
-        <div className="lg:col-span-7 relative bg-[#0d1117] border border-white/5 rounded-[48px] p-8 md:p-16 h-[500px] flex flex-col justify-center overflow-hidden">
+        {/* RIGHT: DATA VISUALIZER */}
+        <div className="lg:col-span-7 relative bg-[#0d1117] border border-white/5 rounded-[32px] md:rounded-[48px] p-8 md:p-16 min-h-[400px] lg:h-[500px] flex flex-col justify-center overflow-hidden">
           
-          {/* Subtle Technical Grid Background */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
                style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
@@ -91,19 +92,19 @@ const FleetFeaturesXray = () => {
               transition={{ duration: 0.4 }}
               className="relative z-10"
             >
-              <div className="inline-block p-4 bg-lime-500/10 rounded-2xl mb-8">
+              <div className="inline-block p-4 bg-lime-500/10 rounded-2xl mb-6 md:mb-8">
                 <Cpu size={32} className="text-lime-500" />
               </div>
               
-              <h2 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-none mb-6">
+              <h2 className="text-3xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-none mb-6">
                 {features[activeTab].title}
               </h2>
               
-              <p className="text-slate-400 text-lg font-medium leading-relaxed max-w-lg mb-10">
+              <p className="text-slate-400 text-base md:text-lg font-medium leading-relaxed max-w-lg mb-8 md:mb-10">
                 {features[activeTab].desc}
               </p>
 
-              <div className="flex items-center gap-8 border-t border-white/5 pt-8">
+              <div className="flex flex-wrap items-center gap-6 md:gap-8 border-t border-white/5 pt-8">
                 <div>
                   <p className="text-[9px] text-slate-500 font-black uppercase tracking-widest mb-1">Status</p>
                   <p className="text-xs text-lime-500 font-bold uppercase tracking-widest flex items-center gap-2">
@@ -111,7 +112,7 @@ const FleetFeaturesXray = () => {
                     Verified
                   </p>
                 </div>
-                <div className="w-px h-8 bg-white/10" />
+                <div className="hidden md:block w-px h-8 bg-white/10" />
                 <div>
                   <p className="text-[9px] text-slate-500 font-black uppercase tracking-widest mb-1">Performance</p>
                   <p className="text-xs text-white font-bold uppercase tracking-widest italic">{features[activeTab].detail}</p>
@@ -120,13 +121,11 @@ const FleetFeaturesXray = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Decorative X-Ray Background Graphic */}
-          <div className="absolute -right-20 -bottom-20 opacity-10 pointer-events-none">
-             <Bus size={400} className="text-white rotate-[-15deg]" />
+          <div className="absolute -right-10 -bottom-10 md:-right-20 md:-bottom-20 opacity-10 pointer-events-none">
+             <Bus size={300} className="md:w-[400px] text-white rotate-[-15deg]" />
           </div>
         </div>
       </div>
-
     </section>
   );
 };

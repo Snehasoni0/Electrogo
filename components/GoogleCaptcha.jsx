@@ -8,11 +8,11 @@ const GoogleCaptcha = forwardRef((props, ref) => {
   const SITE_KEY = "6LdNvYUsAAAAAI_8xjhNMf0b43yAk_p5W6Wmm5gC";
 
   return (
-    <div className="py-4 flex justify-center md:justify-start">
+    <div className="flex justify-center md:justify-start">
       <ReCAPTCHA
         ref={ref}
         sitekey={SITE_KEY}
-        theme="dark" // Keeps it consistent with your Gray-950 theme
+        theme="dark" 
       />
     </div>
   );

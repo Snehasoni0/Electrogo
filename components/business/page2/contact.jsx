@@ -12,7 +12,7 @@ const B2GContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const formData = new FormData(e.target);
     const payload = {
       sheetName: "b2g",
@@ -24,7 +24,7 @@ const B2GContactForm = () => {
     // --- VALIDATIONS ---
     if (payload.dept.length < 3) return toast.error("Please enter a valid Department name.");
     if (payload.designation.length < 2) return toast.error("Please enter a valid Designation.");
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(payload.email)) return toast.error("Invalid official email address.");
 
@@ -47,9 +47,9 @@ const B2GContactForm = () => {
       toast.success("Briefing Request Received. Your request is now in the priority queue.", {
         position: "top-right",
         theme: "dark",
-        style: { 
-          backgroundColor: '#0f172a', 
-          border: '1px solid #84cc16', 
+        style: {
+          backgroundColor: '#0f172a',
+          border: '1px solid #84cc16',
           color: '#f8fafc',
           fontFamily: 'monospace',
           fontSize: '11px',
@@ -82,7 +82,7 @@ const B2GContactForm = () => {
               <span className="text-lime-500 not-italic">Briefing.</span>
             </h2>
             <p className="mt-8 text-slate-500 font-medium text-sm leading-relaxed max-w-md">
-              Establish a direct channel with our State Procurement Division. 
+              Establish a direct channel with our State Procurement Division.
               Priority compliance documentation for Rajasthan's administrative departments.
             </p>
           </div>
@@ -105,8 +105,8 @@ const B2GContactForm = () => {
           </div>
         </div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} className="relative p-[1px] rounded-[40px] overflow-hidden bg-gradient-to-br from-lime-500/20 to-transparent shadow-2xl">
-          <div className="bg-gradient-to-br from-[#111827] via-[#030712] to-[#030712] p-8 md:p-12 rounded-[39px]">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} className="relative p-[1px] rounded-[20px] overflow-hidden bg-gradient-to-br from-lime-500/20 to-transparent shadow-2xl">
+          <div className="bg-gradient-to-br from-[#111827] via-[#030712] to-[#030712] p-8 md:p-12 ">
             <div className="mb-10 flex items-center justify-between border-b border-white/5 pb-6">
               <h3 className="text-white font-black uppercase italic text-xl tracking-tight">Briefing Credentials</h3>
             </div>
@@ -138,13 +138,15 @@ const B2GContactForm = () => {
                 </div>
               </div>
 
-              {/* Added Captcha Section */}
-              <div className="scale-75 origin-left transform-gpu -my-2">
-                <GoogleCaptcha ref={captchaRef} />
+
+              <div className="space-y-2">
+                  <div className="flex-shrink-0 scale-[0.85] xs:scale-90 md:scale-100 origin-center md:origin-left">
+                    <GoogleCaptcha ref={captchaRef} />
+                  </div>
               </div>
 
               <button disabled={loading} className="w-full group bg-lime-500 hover:bg-lime-400 text-black font-black uppercase italic tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_20px_40px_rgba(163,230,53,0.2)] disabled:opacity-50 cursor-pointer">
-                {loading ? <Loader2 className="animate-spin" /> : <>Submit Briefing Request <Send size={18} /></>}
+                {loading ? <Loader2 className="animate-spin" /> : <>Submit Briefing Request</>}
               </button>
             </form>
           </div>

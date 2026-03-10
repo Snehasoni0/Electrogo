@@ -34,7 +34,7 @@ const FleetShowcase = () => {
   const prev = () => setIndex((prev) => (prev - 1 + fleet.length) % fleet.length);
 
   return (
-    <section className="relative h-screen w-full bg-gray-950 flex flex-col overflow-hidden font-sans py-2">
+    <section className="relative min-h-screen w-full bg-gray-950 flex flex-col overflow-hidden font-sans py-2">
       
       {/* 1. TACTICAL HEADER */}
       <div className="z-20 flex justify-between items-center px-6 md:px-12 pt-8 border-b border-white/5 bg-gray-950/50 backdrop-blur-md">

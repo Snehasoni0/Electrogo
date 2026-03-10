@@ -180,9 +180,10 @@ const LeadFormSection = () => {
               </div>
             </div>
 
-            {/* Captcha with tight spacing */}
-            <div className="scale-[0.70] origin-left transform-gpu -my-6 ml-8 md:ml-0">
-              <GoogleCaptcha ref={captchaRef} />
+            <div>
+              <div className="flex-shrink-0 scale-[0.85] xs:scale-90 md:scale-100 origin-center md:origin-left">
+                <GoogleCaptcha ref={captchaRef} />
+              </div>
             </div>
 
             <motion.button

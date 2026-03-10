@@ -1,19 +1,62 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Building2, Car, MapPin, Send, ChevronDown } from 'lucide-react';
+import { Zap, Building2, Car, MapPin, Send, ChevronDown, Loader2 } from 'lucide-react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LeadFormSection = () => {
   const [interest, setInterest] = useState('');
-  const [formData, setFormData] = useState({});
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+    
+    // Construct payload for the "leads" tab
+    const payload = {
+      sheetName: "leads",
+      interest: interest,
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      sqft: formData.get('sqft') || "N/A",
+      city: formData.get('city') || "N/A",
+      company: formData.get('company') || "N/A",
+      km: formData.get('km') || "N/A",
+    };
+
+    try {
+      // Use your deployed Google Apps Script URL here
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzDZI58v0nAxJ4OTycP9mk23WV7_LDzTYyJ4ib3w0f5EQh1d9EZfNMxWtMPlk6I79CCyQ/exec";
+
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      toast.success("Partnership Protocol Initiated. Our executive team will reach out.", {
+        position: "top-right",
+        theme: "dark",
+        style: { border: '1px solid #a3e635', color: '#fff', background: '#020617', fontFamily: 'monospace' }
+      });
+
+      e.target.reset();
+      setInterest('');
+    } catch (error) {
+      toast.error("TRANSMISSION FAILED. CHECK CONNECTION.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-gray-950 py-16 md:py-24 px-6 md:px-24 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-gray-950 py-16 md:py-24 px-6 md:px-24 overflow-hidden selection:bg-lime-400">
+      <ToastContainer />
       
       {/* ROW 1: HEADINGS */}
       <div className="max-w-7xl mx-auto mb-12 md:mb-16">
@@ -31,10 +74,10 @@ const LeadFormSection = () => {
         </h2>
       </div>
 
-      {/* ROW 2: 2-COLUMN GRID (Reversed on Mobile) */}
+      {/* ROW 2: 2-COLUMN GRID */}
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         
-        {/* COLUMN 1: DYNAMIC MULTI-STEP FORM */}
+        {/* COLUMN 1: DYNAMIC FORM */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -42,7 +85,7 @@ const LeadFormSection = () => {
         >
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-lime-400 rounded-full blur-[120px] opacity-10" />
 
-          <form className="relative z-10 space-y-8">
+          <form onSubmit={handleSubmit} className="relative z-10 space-y-8">
             <div className="space-y-3">
               <label className="text-lime-400 font-mono text-[10px] font-black uppercase tracking-widest">
                 01. I am interested in...
@@ -50,12 +93,11 @@ const LeadFormSection = () => {
               
               <div className="relative">
                 <select 
+                  name="interest"
+                  required
                   onFocus={() => setIsDropdownOpen(true)}
                   onBlur={() => setIsDropdownOpen(false)}
-                  onChange={(e) => {
-                    setInterest(e.target.value);
-                    e.target.blur();
-                  }}
+                  onChange={(e) => setInterest(e.target.value)}
                   className="w-full bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:outline-none focus:border-lime-400 transition-all appearance-none cursor-pointer relative z-10"
                 >
                   <option value="">Select Path</option>
@@ -66,7 +108,6 @@ const LeadFormSection = () => {
 
                 <motion.div
                   animate={{ rotate: isDropdownOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3, ease: "circOut" }}
                   className="absolute right-6 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-gray-500"
                 >
                   <ChevronDown size={20} className={isDropdownOpen ? "text-lime-400" : "text-gray-500"} />
@@ -77,43 +118,57 @@ const LeadFormSection = () => {
             <AnimatePresence mode="wait">
               {interest === 'charger' && (
                 <motion.div 
+                  key="charger"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   className="space-y-6 overflow-hidden"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input name="sqft" placeholder="Location Size (Sq Ft)" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
-                    <input name="city" placeholder="City (e.g. Jaipur, Ajmer)" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
+                    <input name="sqft" required placeholder="Location Size (Sq Ft)" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
+                    <input name="city" required placeholder="City (e.g. Jaipur, Ajmer)" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
                   </div>
                 </motion.div>
               )}
 
               {interest === 'corporate' && (
                 <motion.div 
+                  key="corporate"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   className="space-y-6 overflow-hidden"
                 >
-                  <input name="company" placeholder="Department/Company Name" className="w-full bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600" />
-                  <input name="km" placeholder="Monthly KM Requirement" className="w-full bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600" />
+                  <input name="company" required placeholder="Department/Company Name" className="w-full bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600" />
+                  <input name="km" required placeholder="Monthly KM Requirement" className="w-full bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600" />
                 </motion.div>
               )}
             </AnimatePresence>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input placeholder="Full Name" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
-              <input placeholder="Phone Number" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
+              <input name="name" required placeholder="Full Name" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
+              <input name="phone" required placeholder="Phone Number" className="bg-gray-950 border border-gray-800 text-white rounded-xl px-6 py-4 focus:border-lime-400 outline-none placeholder:text-gray-600 w-full" />
             </div>
 
-            <button className="group w-full bg-lime-400 hover:bg-lime-300 text-gray-950 font-black uppercase tracking-[0.2em] text-xs italic py-5 rounded-xl flex items-center justify-center gap-3 transition-all shadow-xl active:scale-[0.98]">
-              Secure My Partnership <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
+            <motion.button 
+              disabled={loading}
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              className="group w-full bg-lime-400 hover:bg-lime-300 text-gray-950 font-black uppercase tracking-[0.2em] text-xs italic py-5 rounded-xl flex items-center justify-center gap-3 transition-all shadow-xl disabled:opacity-50 cursor-pointer"
+            >
+              {loading ? (
+                <Loader2 className="animate-spin" size={18} />
+              ) : (
+                <>
+                  Secure My Partnership 
+                  <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </>
+              )}
+            </motion.button>
           </form>
         </motion.div>
 
-        {/* COLUMN 2: STRATEGIC TEXT (Top on Mobile) */}
+        {/* COLUMN 2: STRATEGIC TEXT */}
         <div className="flex flex-col justify-center space-y-10 lg:h-full">
           <div className="space-y-6 border-l-2 border-lime-400 pl-8">
             <h3 className="text-3xl md:text-4xl font-black text-white uppercase italic leading-none">

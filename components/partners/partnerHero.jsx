@@ -24,7 +24,7 @@ const PartnerHero = () => {
       </div>
 
       {/* 2. MAIN CONTENT GRID */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-16 items-center mt-24">
         
         {/* LEFT SIDE: SEO-Hook Narrative (7 Columns) */}
         <div className="lg:col-span-7 space-y-3 md:space-y-8 ">

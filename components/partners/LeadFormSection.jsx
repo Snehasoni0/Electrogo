@@ -30,7 +30,7 @@ const LeadFormSection = () => {
 
     try {
       // Use your deployed Google Apps Script URL here
-      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzDZI58v0nAxJ4OTycP9mk23WV7_LDzTYyJ4ib3w0f5EQh1d9EZfNMxWtMPlk6I79CCyQ/exec";
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyA_3ZZk2tzFd6upSy-MLytpWLvXDkhjWWdGqmXBiVoYamM4BiS3t56RhPcPa_KHa-HhA/exec";
 
       await fetch(SCRIPT_URL, {
         method: 'POST',

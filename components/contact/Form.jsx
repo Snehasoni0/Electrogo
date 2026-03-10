@@ -1,29 +1,53 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Send, User, Mail, MessageSquare, Briefcase, ChevronDown, Loader2 } from 'lucide-react';
-// 1. Import Toastify
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GoogleCaptcha from '../GoogleCaptcha';
 
 const InquirySection = () => {
   const [loading, setLoading] = useState(false);
+  const captchaRef = useRef(null); // Reference for the Captcha
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
 
+    // 1. GATHER DATA
     const formData = new FormData(e.target);
     const payload = {
-      name: formData.get('name'),
-      email: formData.get('email'),
+      name: formData.get('name').trim(),
+      email: formData.get('email').trim(),
       type: formData.get('type'),
-      message: formData.get('message'),
+      message: formData.get('message').trim(),
       sheetName: "contact"
     };
 
+    // 2. CLIENT-SIDE VALIDATIONS
+    if (payload.name.length < 3) {
+      return toast.error("Please enter a valid name.");
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(payload.email)) {
+      return toast.error("Please use a valid official email.");
+    }
+
+    if (payload.message.length < 10) {
+      return toast.error("Message is too short for a formal inquiry.");
+    }
+
+    // 3. CAPTCHA VALIDATION
+    // We get the value from the reusable component via the ref
+    const captchaToken = captchaRef.current?.getValue();
+    if (!captchaToken) {
+      return toast.error("Security Check Required: Please click the checkbox.");
+    }
+
+    setLoading(true);
+
     try {
-      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyA_3ZZk2tzFd6upSy-MLytpWLvXDkhjWWdGqmXBiVoYamM4BiS3t56RhPcPa_KHa-HhA/exec";
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzVnLQ-YWWy75O7fEOfZJ6FDk4RnHcGfCXTt3wLwxnk1ECZNLxTaJceWDYgV06VGV1qZQ/exec";
 
       await fetch(SCRIPT_URL, {
         method: 'POST',
@@ -32,16 +56,15 @@ const InquirySection = () => {
         body: JSON.stringify(payload),
       });
 
-      // 2. Success Notification
-      toast.success("Transmission Received! Our team will contact you shortly..", {
+      toast.success("Transmission Received! Jodhpur Command Node updated.", {
         position: "top-right",
-        autoClose: 5000,
         theme: "dark",
         style: { border: '1px solid #84cc16', color: '#fff', background: '#020617' }
       });
 
-      // 3. Empty the form fields
+      // 4. RESET EVERYTHING
       e.target.reset();
+      captchaRef.current?.reset(); // Clear the captcha for the next submission
 
     } catch (error) {
       toast.error("Signal Lost. Please check connection.");
@@ -51,25 +74,16 @@ const InquirySection = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-gray-950 overflow-hidden selection:bg-lime-400">
-      {/* 4. Add the Toast Container to your JSX */}
+    <section className="py-12 px-6 bg-gray-950 overflow-hidden selection:bg-lime-400">
       <ToastContainer />
-
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
-
           <div className="lg:col-span-6 space-y-10">
-            <div className="space-y-4">
-              <motion.div initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
-                <div className="h-[2px] w-12 bg-lime-500" />
-                <span className="text-lime-600 font-mono text-[10px] tracking-[0.4em] uppercase font-black">Transmission Protocol</span>
-              </motion.div>
-              <h2 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter">
-                Get In <span className="text-slate-400">Touch!</span>
-              </h2>
-            </div>
+
+            {/* ... Titles and existing UI ... */}
 
             <form onSubmit={handleSubmit} className="space-y-6 max-w-lg">
+              {/* Name Input */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Full Name</label>
                 <div className="flex items-center gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
@@ -78,6 +92,7 @@ const InquirySection = () => {
                 </div>
               </div>
 
+              {/* Email Input */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Email Address</label>
                 <div className="flex items-center gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
@@ -86,20 +101,30 @@ const InquirySection = () => {
                 </div>
               </div>
 
+              {/* Inquiry Selection */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Inquiry Type</label>
                 <div className="relative flex items-center gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
                   <Briefcase size={18} className="text-lime-400 group-focus-within:text-lime-500" />
-                  <select name="type" className="w-full bg-transparent text-sm font-medium outline-none text-white appearance-none cursor-pointer z-10">
-                    <option className="bg-gray-950">Fleet Partnership Inquiry</option>
-                    <option className="bg-gray-950">Infrastructure Development</option>
-                    <option className="bg-gray-950">Corporate Fleet Solutions</option>
-                    <option className="bg-gray-950">General Support</option>
+
+                  {/* Fixed: Moved 'selected' logic to 'defaultValue' on the select tag */}
+                  <select
+                    name="type"
+                    required
+                    defaultValue=""
+                    className="w-full bg-transparent text-sm font-medium outline-none text-white appearance-none cursor-pointer z-10"
+                  >
+                    <option value="" disabled className="bg-gray-950 text-slate-500">Select Inquiry Type</option>
+                    <option value="Fleet Partnership" className="bg-gray-950">Fleet Partnership Inquiry</option>
+                    <option value="Infrastructure" className="bg-gray-950">Infrastructure Development</option>
+                    <option value="Corporate" className="bg-gray-950">Corporate Fleet Solutions</option>
                   </select>
+
                   <ChevronDown size={16} className="absolute right-4 text-slate-500 pointer-events-none" />
                 </div>
               </div>
 
+              {/* Message */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Message / Payload</label>
                 <div className="flex items-start gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
@@ -108,25 +133,22 @@ const InquirySection = () => {
                 </div>
               </div>
 
+              {/* USE YOUR REUSABLE COMPONENT HERE */}
+              <GoogleCaptcha ref={captchaRef} />
+
               <motion.button
                 disabled={loading}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-5 bg-lime-400 text-gray-950 rounded-2xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-lime-300 transition-all shadow-xl disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full py-5 bg-lime-400 text-gray-950 rounded-2xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-lime-300 transition-all shadow-xl disabled:opacity-50 cursor-pointer"
               >
-                {/* If loading is true, show only the spinner. If false, show text and Send icon. */}
-                {loading ? (
-                  <Loader2 className="animate-spin" size={20} />
-                ) : (
-                  <>
-                    Transmit Inquiry <Send size={18} />
-                  </>
-                )}
+                {loading ? <Loader2 className="animate-spin" size={20} /> : <>Transmit Inquiry <Send size={18} /></>}
               </motion.button>
             </form>
           </div>
 
+          {/* ... Rest of your image column ... */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -166,7 +188,6 @@ const InquirySection = () => {
             {/* Glowing Accent */}
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-lime-500 rounded-full blur-[80px] opacity-20" />
           </motion.div>
-
         </div>
       </div>
     </section>

@@ -1,34 +1,50 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react'; // Added useRef
 import { motion } from 'framer-motion';
 import { Send, Landmark, UserCheck, ShieldCheck, Mail, FileText, Loader2 } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GoogleCaptcha from '../../GoogleCaptcha';
 
 const B2GContactForm = () => {
   const [loading, setLoading] = useState(false);
+  const captchaRef = useRef(null); // Ref for captcha
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-
+    
     const formData = new FormData(e.target);
     const payload = {
       sheetName: "b2g",
-      dept: formData.get('dept'),
-      designation: formData.get('designation'),
-      email: formData.get('email'),
+      dept: formData.get('dept').trim(),
+      designation: formData.get('designation').trim(),
+      email: formData.get('email').trim(),
     };
 
+    // --- VALIDATIONS ---
+    if (payload.dept.length < 3) return toast.error("Please enter a valid Department name.");
+    if (payload.designation.length < 2) return toast.error("Please enter a valid Designation.");
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(payload.email)) return toast.error("Invalid official email address.");
+
+    // --- CAPTCHA VALIDATION ---
+    const captchaToken = captchaRef.current?.getValue();
+    if (!captchaToken) {
+      return toast.error("Security Check Required: Please click the checkbox.");
+    }
+
+    setLoading(true);
+
     try {
-      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyA_3ZZk2tzFd6upSy-MLytpWLvXDkhjWWdGqmXBiVoYamM4BiS3t56RhPcPa_KHa-HhA/exec";
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzVnLQ-YWWy75O7fEOfZJ6FDk4RnHcGfCXTt3wLwxnk1ECZNLxTaJceWDYgV06VGV1qZQ/exec";
       await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         body: JSON.stringify(payload),
       });
 
-      toast.success("Briefing Request Received.Your request is now in the priority queue.", {
+      toast.success("Briefing Request Received. Your request is now in the priority queue.", {
         position: "top-right",
         theme: "dark",
         style: { 
@@ -42,6 +58,7 @@ const B2GContactForm = () => {
       });
 
       e.target.reset();
+      captchaRef.current?.reset(); // Reset captcha on success
     } catch (error) {
       toast.error("ENCRYPTION ERROR. RETRY TRANSMISSION.");
     } finally {
@@ -119,6 +136,11 @@ const B2GContactForm = () => {
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-lime-500 transition-colors" size={18} />
                   <input name="email" required type="email" placeholder="name@rajasthan.gov.in" className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-lime-500/50 transition-all font-medium text-sm placeholder:text-white/20" />
                 </div>
+              </div>
+
+              {/* Added Captcha Section */}
+              <div className="scale-75 origin-left transform-gpu -my-2">
+                <GoogleCaptcha ref={captchaRef} />
               </div>
 
               <button disabled={loading} className="w-full group bg-lime-500 hover:bg-lime-400 text-black font-black uppercase italic tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_20px_40px_rgba(163,230,53,0.2)] disabled:opacity-50 cursor-pointer">

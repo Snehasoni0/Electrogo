@@ -38,15 +38,12 @@ const page = () => {
     <div className="min-h-screen bg-white text-slate-700 font-sans selection:bg-lime-400 selection:text-black">
       
 
-      {/* 2. HERO SECTION WITH IMAGE & OVERLAY */}
       <header className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
-        {/* Background Image - Replace URL with your actual asset */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[0.5]"
           style={{ backgroundImage: `url('https://plus.unsplash.com/premium_photo-1661371394983-42485fed3a58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGFuZHNoYWtlfGVufDB8fDB8fHww')` }}
         />
         
-        {/* Dark Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-white z-0" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
@@ -64,10 +61,8 @@ const page = () => {
         </div>
       </header>
 
-      {/* 3. CONTENT GRID */}
       <main className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 relative">
         
-        {/* Left: Summary Sidebar */}
         <aside className="lg:col-span-4 space-y-8">
           <div className="bg-slate-50 border border-slate-100 p-8 rounded-[2rem] sticky top-32 shadow-sm">
             <h3 className="text-slate-900 font-black uppercase italic tracking-widest text-sm mb-6 flex items-center gap-2">
@@ -88,7 +83,6 @@ const page = () => {
           </div>
         </aside>
 
-        {/* Right: Detailed Text */}
         <div className="lg:col-span-8 space-y-16">
           {sections.map((section, index) => (
             <motion.section 

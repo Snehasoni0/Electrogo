@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useSpring, useTransform, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Leaf, Sun, Car } from 'lucide-react';
 
 const StatCounter = ({ value, suffix = "" }) => {
@@ -30,7 +30,6 @@ const StatCounter = ({ value, suffix = "" }) => {
 const SustainabilitySection = () => {
   return (
     <section className="relative bg-gray-950 py-32 overflow-hidden">
-      {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-lime-500 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500 rounded-full blur-[120px]" />
@@ -58,10 +57,8 @@ const SustainabilitySection = () => {
           </motion.h2>
         </div>
 
-        {/* STATS GRID - Unique Isometric Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Goal 1: CO2 */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -77,7 +74,6 @@ const SustainabilitySection = () => {
             </div>
             <p className="text-lime-400 mt-4 font-bold tracking-widest uppercase text-xs">Tons of Impact</p>
             
-            {/* Visual Indicator: Progress Bar */}
             <div className="mt-8 h-1 w-full bg-white/10 rounded-full overflow-hidden">
                 <motion.div 
                     initial={{ width: 0 }}
@@ -88,7 +84,6 @@ const SustainabilitySection = () => {
             </div>
           </motion.div>
 
-          {/* Goal 2: EV Cabs */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +110,6 @@ const SustainabilitySection = () => {
             </div>
           </motion.div>
 
-          {/* Goal 3: Solar */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

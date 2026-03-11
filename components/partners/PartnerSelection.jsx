@@ -41,7 +41,7 @@ const PartnerSelection = () => {
       headline: "Drive the Change.",
       content: "Become a partner-pilot in our 100% electric fleet. Professional training, fixed earnings, and zero fuel costs.",
       benefit: "Health Insurance & Performance Incentives.",
-      icon: <UserCheck size={24} />, // Updated Icon
+      icon: <UserCheck size={24} />, 
       accent: "border-slate-900",
       bg: "hover:bg-slate-900/5",
       textAccent: "text-slate-900",
@@ -52,7 +52,6 @@ const PartnerSelection = () => {
   return (
     <section className="relative w-full bg-white py-24 px-8 md:px-24 overflow-hidden font-sans">
       
-      {/* SECTION LABELS */}
       <div className="max-w-7xl mx-auto mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <span className="text-[10px] font-black text-lime-300 uppercase tracking-[0.5em] mb-4 block">Ecosystem Segments</span>
@@ -66,7 +65,6 @@ const PartnerSelection = () => {
         </p>
       </div>
 
-      {/* HOVER-EXPANSION GRID */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 h-auto min-h-[500px]">
         {paths.map((item, i) => (
           <motion.div

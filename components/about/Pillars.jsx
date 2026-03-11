@@ -4,23 +4,21 @@ import { Leaf, ShieldCheck, Zap, Users } from "lucide-react";
 
 export default function PillarsSection() {
   return (
-    <section className="py-24 px-6 bg-gray-950 ">
+    <section className="py-24 px-6 bg-gray-950">
       <div className="max-w-6xl mx-auto">
-
         <h2 className="text-center text-white text-4xl font-bold mb-10 flex flex-col items-center justify-center">
           Our Core Pillars
           <div className="w-20 h-0.5 bg-green-700/95 mt-4"></div>
         </h2>
 
-        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
           <Card
             col="md:col-span-2"
             icon={Leaf}
             title="Sustainability First"
             desc="Every kilometer driven by our EV fleet is a step toward cleaner air and a healthier Rajasthan."
-            img="https://images.unsplash.com/photo-1671782584185-1300064c5289"
+            // Optimized: Added &w=1000&q=75 for a balance of quality and speed
+            img="https://images.unsplash.com/photo-1671782584185-1300064c5289?auto=format&fit=crop&q=75&w=1000"
           />
 
           <Card
@@ -28,7 +26,7 @@ export default function PillarsSection() {
             icon={ShieldCheck}
             title="Government Synergy"
             desc="Secure and compliant mobility solutions built for government leaders and officials."
-            img="https://images.unsplash.com/photo-1558981285-6f0c94958bb6"
+            img="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=75&w=600"
           />
 
           <Card
@@ -36,7 +34,7 @@ export default function PillarsSection() {
             icon={Zap}
             title="Infrastructure at Scale"
             desc="We are building the electric highway across Rajasthan through high-speed EV charging hubs."
-            img="https://images.unsplash.com/photo-1607860108855-64acf2078ed9"
+            img="https://images.unsplash.com/photo-1548792231-0bccaf8933bb?auto=format&fit=crop&q=75&w=600"
           />
 
           <Card
@@ -44,46 +42,49 @@ export default function PillarsSection() {
             icon={Users}
             title="Local Impact"
             desc="Creating green-tech jobs and empowering the youth of Rajasthan through the EV ecosystem."
-            img="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+            img="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=75&w=1000"
           />
-
         </div>
       </div>
     </section>
   );
 }
 
-
 function Card({ icon: Icon, title, desc, img, col }) {
   return (
     <div
-      className={`group relative ${col} h-[260px] rounded-2xl overflow-hidden cursor-pointer`}
+      className={`group relative ${col} h-[280px] rounded-2xl overflow-hidden cursor-pointer bg-gray-900`}
     >
-
-      {/* BG IMAGE */}
+      {/* 1. added bg-gray-900 as a placeholder color
+          2. added loading="lazy" to prevent blocking initial load
+          3. used decodings="async" for smoother rendering
+      */}
       <img
         src={img}
-        className="absolute inset-0 w-full h-full object-cover md:group-hover:scale-110 transition duration-500"
+        alt={title}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover opacity-60 md:opacity-100 group-hover:scale-105 transition-transform duration-700 ease-out"
       />
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/50 md:opacity-0 md:group-hover:opacity-100 opacity-100 transition duration-300"></div>
+      {/* Overlay - Darker on mobile for readability, fades in on desktop hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:opacity-60 md:group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      {/* CONTENT */}
-      <div className="absolute bottom-0 left-0 p-8 text-white md:translate-y-6 md:group-hover:translate-y-0 translate-y-0 transition duration-300">
+      <div className="absolute bottom-0 left-0 p-8 text-white w-full z-10">
+        <div className="flex items-center gap-3 mb-3">
+            <Icon size={28} className="text-green-500" />
+            <h3 className="text-xl font-bold tracking-tight">
+                {title}
+            </h3>
+        </div>
 
-        <Icon size={34} className="mb-4" />
-
-        <h3 className="text-xl font-semibold mb-2">
-          {title}
-        </h3>
-
-        <p className="text-sm text-gray-200 md:opacity-0 md:group-hover:opacity-100 opacity-100 transition duration-300">
+        {/* On Desktop: Hidden until hover
+            On Mobile: Always visible but slightly smaller
+        */}
+        <p className="text-sm text-gray-200 leading-relaxed md:max-h-0 md:group-hover:max-h-24 md:opacity-0 md:group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-in-out">
           {desc}
         </p>
-
       </div>
-
     </div>
   );
 }

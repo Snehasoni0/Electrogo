@@ -3,11 +3,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
 const Invite = () => {
   const { scrollYProgress } = useScroll();
-  // Move car from left to right based on scroll
   const carX = useTransform(scrollYProgress, [0.8, 1], [-100, 400]);
   return (
     <section className="relative py-24 bg-white overflow-hidden">
-      {/* Localized Pattern: 5% Opacity Leheriya */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')`, backgroundSize: '200px' }}>
       </div>
@@ -34,9 +32,7 @@ const Invite = () => {
             </motion.button>
           </div>
 
-          {/* Parallax Storytelling: Desert to City */}
           <div className="relative w-full lg:w-[500px] h-[300px] bg-stone-50 rounded-[40px] border border-gray-100 overflow-hidden shadow-inner">
-            {/* City Skyline (Static Right) */}
             <div className="absolute bottom-0 right-4 opacity-20">
                <div className="flex items-end gap-1">
                   <div className="w-8 h-32 bg-gray-950 rounded-t-lg"></div>
@@ -45,7 +41,6 @@ const Invite = () => {
                </div>
             </div>
 
-            {/* Moving Car */}
             <motion.div 
               style={{ x: carX }}
               className="absolute bottom-6 left-0 z-20"
@@ -59,7 +54,6 @@ const Invite = () => {
               </div>
             </motion.div>
 
-            {/* Desert Sun */}
             <div className="absolute top-10 left-10 w-20 h-20 bg-orange-100 rounded-full"></div>
             
             <div className="absolute bottom-8 left-8 flex items-center gap-2 text-gray-400">

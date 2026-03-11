@@ -31,7 +31,6 @@ const SustainabilityFlow = () => {
   return (
     <section className="relative w-full bg-white py-20 px-8 md:px-24 font-sans overflow-hidden border-b border-slate-100">
 
-      {/* MAIN HEADING (Top Center) */}
       <div className="max-w-7xl mx-auto mb-20">
         <motion.div
           initial={{ width: 0 }} whileInView={{ width: "3rem" }}
@@ -43,10 +42,8 @@ const SustainabilityFlow = () => {
         </h2>
       </div>
 
-      {/* 2-COLUMN GRID: Vertical Subhead | 3-Pillar Items */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 items-start">
 
-        {/* COLUMN 1: VERTICAL SUB-HEADLINE (2 Cols) */}
         <div className="lg:col-span-2 flex justify-start lg:justify-start pt-0 md:pt-4">
           <h3 className="
     /* Mobile: Horizontal, Top Border */
@@ -62,10 +59,8 @@ const SustainabilityFlow = () => {
           </h3>
         </div>
 
-        {/* COLUMN 2: THE IMPACT ITEMS (10 Cols) */}
         <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-3 gap-8 relative">
 
-          {/* SVG FLOW ARROWS (Hidden on Mobile) */}
           <div className="absolute -top-12 left-0 w-full hidden md:block opacity-20">
             <svg width="100%" height="40" viewBox="0 0 800 40" fill="none">
               <path d="M10 10 Q 130 10, 130 40" stroke="#84cc16" strokeWidth="2" strokeDasharray="4 4" />
@@ -83,7 +78,6 @@ const SustainabilityFlow = () => {
               className="group relative"
             >
 
-              {/* Card Body */}
               <div className="p-8 bg-slate-50 border border-slate-100 rounded-[32px] hover:bg-white hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.08)] transition-all duration-500 h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-8">

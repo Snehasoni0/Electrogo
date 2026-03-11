@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Smartphone, Target, Leaf, Search, MapPin, Radio, ChevronRight } from 'lucide-react';
+import { Smartphone, Leaf, Search, MapPin, Radio, ChevronRight } from 'lucide-react';
 
 const VerticalDeploymentFlow = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -81,29 +81,24 @@ const VerticalDeploymentFlow = () => {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center py-10 px-6 overflow-hidden">
       
-      {/* 1. BACKGROUND IMAGE LAYER WITH GRAY OVERLAY */}
       <div 
-        // Changed bg-opacity-20 to bg-gray-700 (our overlay color) and added bg-blend-multiply
         className="absolute inset-0 z-0 bg-gray-700 bg-blend-multiply pointer-events-none transition-colors duration-1000"
         style={{ 
           backgroundImage: `url('https://plus.unsplash.com/premium_photo-1758766936330-6fde8043b478?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGV2JTIwcmlkZXxlbnwwfHwwfHx8MA%3D%3D')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          // Optionally, add a slight grayscale filter if you want a deeper gray
           filter: 'grayscale(60%)' 
         }}
       />
 
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-4 md:gap-12 relative z-10">
         
-        {/* LEFT: VERTICAL TITLE */}
         <div className="hidden md:flex flex-col items-center gap-4 py-4">
            <h2 className="text-8xl font-black text-white uppercase italic tracking-tighter leading-none rotate-270 opacity-60">
              How it <br /> <span className="text-lime-500/50">Works.</span>
            </h2>
         </div>
 
-        {/* CENTER: DYNAMIC CONTENT AREA */}
         <div className="flex-1 flex flex-col gap-6">
           <div className="space-y-1">
              <h3 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-tight">
@@ -125,7 +120,6 @@ const VerticalDeploymentFlow = () => {
                    <ChevronRight size={12} />
                    <span>{steps[activeStep].sub}</span>
                 </div>
-                {/* Legibility tweak: Backdrop blur added */}
                 <p className="text-slate-200 text-sm max-w-xs leading-tight font-medium bg-black/10 backdrop-blur-sm p-2 rounded-xl">
                   {steps[activeStep].desc}
                 </p>
@@ -134,7 +128,6 @@ const VerticalDeploymentFlow = () => {
           </div>
         </div>
 
-        {/* RIGHT: COMPACT PHONE MOCKUP */}
         <div className="w-full md:w-[350px] flex justify-center items-center">
           <motion.div 
             className="relative w-64 h-[520px] bg-white rounded-[2.5rem] border-[8px] border-slate-950 shadow-[0_0_60px_rgba(0,0,0,0.7)] overflow-hidden flex flex-col"

@@ -28,7 +28,6 @@ export default function FAQSection() {
     <section className="bg-white py-28 px-6 text-slate-900">
       <div className="max-w-3xl mx-auto">
         
-        {/* CENTERED HEADER */}
         <div className="text-center">
           <motion.span 
             initial={{ opacity: 0 }}
@@ -43,7 +42,6 @@ export default function FAQSection() {
           <div className="h-1 w-12 bg-lime-500 mx-auto mt-6"></div>
         </div>
 
-        {/* MINIMALIST ACCORDION */}
         <div className="space-y-0 border-t border-slate-100">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

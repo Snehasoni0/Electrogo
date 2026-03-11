@@ -36,7 +36,6 @@ const FleetShowcase = () => {
   return (
     <section className="relative min-h-screen w-full bg-gray-950 flex flex-col overflow-hidden font-sans py-2">
       
-      {/* 1. TACTICAL HEADER */}
       <div className="z-20 flex justify-between items-center px-6 md:px-12 pt-8 border-b border-white/5 bg-gray-950/50 backdrop-blur-md">
         <div className="flex flex-col">
           <motion.div 
@@ -52,7 +51,6 @@ const FleetShowcase = () => {
           </h2>
         </div>
         
-        {/* Desktop Controls */}
         <div className="hidden md:flex items-center gap-6">
            <div className="h-1 w-24 bg-gray-800 rounded-full overflow-hidden">
               <motion.div 
@@ -71,10 +69,8 @@ const FleetShowcase = () => {
         </div>
       </div>
 
-      {/* 2. MAIN VIEWPORT */}
       <div className="flex-grow flex flex-col md:grid md:grid-cols-12 relative">
         
-        {/* Left: Metadata Panel */}
         <div className="md:col-span-4 flex flex-col justify-center px-6 py-10 z-20">
           <AnimatePresence mode="wait">
             <motion.div
@@ -96,7 +92,6 @@ const FleetShowcase = () => {
                 </p>
               </div>
 
-              {/* Technical Specs */}
               <div className="space-y-3">
                 {[
                   { label: "Mission Range", val: fleet[index].specs.range, icon: <Zap size={14} /> },
@@ -116,15 +111,12 @@ const FleetShowcase = () => {
           </AnimatePresence>
         </div>
 
-        {/* Right: The Machine Stage */}
         <div className="md:col-span-8 relative flex items-center justify-center p-6 overflow-hidden">
           
-          {/* Animated Background Pulse */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-[80%] h-[80%] bg-lime-500/5 rounded-full blur-[120px] animate-pulse" />
           </div>
 
-          {/* Large Watermark */}
           <span className="absolute bottom-10 right-10 text-[12vw] font-black text-white/[0.02] uppercase italic select-none pointer-events-none">
             EV-OFFICIAL
           </span>
@@ -144,13 +136,11 @@ const FleetShowcase = () => {
                   alt={fleet[index].name}
                   className="w-full h-auto max-h-[60vh] object-contain rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] border border-white/10"
                 />
-                {/* Image Reflection Overlay */}
                 <div className="absolute -bottom-10 left-0 w-full h-20 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-60" />
               </div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Mobile Navigation */}
           <div className="md:hidden absolute bottom-10 flex gap-4 z-30">
              <button onClick={prev} className="p-4 bg-gray-900 border border-white/10 text-white rounded-2xl active:scale-95">
                <ArrowLeft size={20} />

@@ -34,7 +34,6 @@ const BusImpactGrid = () => {
      
       <div className="relative z-10 max-w-7xl w-full">
         
-        {/* HEADER SECTION */}
         <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <motion.div 
@@ -49,7 +48,6 @@ const BusImpactGrid = () => {
           </div>
         </div>
 
-        {/* THE INFOGRAPHIC GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {metrics.map((item, i) => (
             <motion.div
@@ -59,7 +57,6 @@ const BusImpactGrid = () => {
               transition={{ delay: i * 0.1 }}
               className="group relative p-10 rounded-[40px] bg-white border border-slate-100 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(163,230,53,0.2)] transition-all duration-500"
             >
-              {/* Animated Progress Circle */}
               <div className="absolute top-10 right-10">
                 <div className="relative flex items-center justify-center">
                   <svg className="w-16 h-16 transform -rotate-90">
@@ -86,7 +83,6 @@ const BusImpactGrid = () => {
                 </p>
               </div>
 
-              {/* Technical Detail Footer */}
               <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-lime-500 rounded-full animate-pulse" />

@@ -7,25 +7,20 @@ const BusServiceHero = () => {
   return (
     <section className="relative h-screen w-full bg-[#0d1117] flex items-center justify-center overflow-hidden font-sans">
       
-      {/* 1. INDUSTRIAL BACKGROUND WITH GRAY OVERLAY */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2000&auto=format&fit=crop" 
           alt="Electric Transit Hub"
           className="w-full h-full object-cover grayscale brightness-[0.3]"
         />
-        {/* Tactical Gray/Navy Overlay */}
         <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-[2px]" />
         
-        {/* Subtle Radial Vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-slate-950/40 to-slate-950" />
       </div>
 
-      {/* 2. CENTERED COMMAND CONTENT */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         
 
-        {/* H1: Mass Transit Headline */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +32,6 @@ const BusServiceHero = () => {
           <span className="text-lime-500 not-italic">Smart Cities.</span>
         </motion.h1>
 
-        {/* Sub-text */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -47,7 +41,6 @@ const BusServiceHero = () => {
           Silent, air-conditioned, and <span className="text-white">zero-emission solutions</span> for Rajasthan’s urban and inter-city connectivity.
         </motion.p>
 
-        {/* Technical Specs Footer */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,7 +59,6 @@ const BusServiceHero = () => {
           ))}
         </motion.div>
 
-        {/* CTA Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +72,6 @@ const BusServiceHero = () => {
         </motion.div>
       </div>
 
-      {/* Decorative Corner Markers */}
       <div className="absolute top-10 left-10 w-24 h-24 border-l-2 border-t-2 border-white/5 pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-24 h-24 border-r-2 border-b-2 border-white/5 pointer-events-none" />
       

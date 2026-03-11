@@ -39,13 +39,11 @@ const GlobalAlignment = () => {
   return (
     <section className="relative min-h-[70vh] w-full bg-white py-24 px-8 md:px-24 overflow-hidden font-sans flex items-center">
       
-      {/* 1. BACKGROUND DECOR (Global Grid) */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         
-        {/* HEADER BLOCK */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-xl">
             <div className="flex items-center gap-3 mb-6">
@@ -62,7 +60,6 @@ const GlobalAlignment = () => {
           </p>
         </div>
 
-        {/* KINETIC SDG CARDS */}
         <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[450px]">
           {sdgs.map((item, i) => (
             <motion.div
@@ -76,12 +73,10 @@ const GlobalAlignment = () => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className={`relative overflow-hidden rounded-[40px] border border-slate-100 p-10 cursor-pointer flex flex-col justify-between transition-all group ${hoveredIndex === i ? 'bg-white shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]' : 'bg-slate-50'}`}
             >
-              {/* Goal Number Background */}
               <div className="absolute -right-4 -top-4 text-[120px] font-black text-slate-200/20 italic select-none group-hover:text-lime-500/10 transition-colors">
                 {item.goal}
               </div>
 
-              {/* Icon & Status */}
               <div className="relative z-10 flex justify-between items-start">
                 <div className={`p-5 rounded-3xl bg-white shadow-sm border ${item.border} group-hover:scale-110 transition-transform duration-500`}>
                   {item.icon}
@@ -92,14 +87,12 @@ const GlobalAlignment = () => {
                 </div>
               </div>
 
-              {/* Content Block */}
               <div className="relative z-10 mt-12 md:mt-0">
                 <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Goal {item.goal}</h4>
                 <h3 className="text-3xl md:text-4xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-4 transition-colors group-hover:text-slate-950">
                   {item.title}
                 </h3>
                 
-                {/* Expandable Text on Hover */}
                 <motion.div 
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ 
@@ -116,7 +109,6 @@ const GlobalAlignment = () => {
                   </div>
                 </motion.div>
 
-                {/* Static Placeholder for non-hovered state */}
                 <motion.p 
                   animate={{ opacity: hoveredIndex === i ? 0 : 1 }}
                   className="text-slate-400 font-bold text-[10px] uppercase tracking-widest italic"

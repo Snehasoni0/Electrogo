@@ -42,7 +42,6 @@ const page = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-lime-400 selection:text-black">
       
-      {/* 1. HERO SECTION */}
       <header className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 grayscale"
@@ -68,7 +67,6 @@ const page = () => {
         </div>
       </header>
 
-      {/* MARQUEE TICKER */}
       <section className="bg-slate-950 py-4 border-y border-white/10 overflow-hidden">
         <div className="flex whitespace-nowrap animate-marquee">
           {[1, 2, 3].map((i) => (
@@ -85,7 +83,6 @@ const page = () => {
         </div>
       </section>
 
-      {/* 2. DIRECT NEWS LIST */}
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="space-y-20">
           {articles.map((article, index) => {
@@ -109,15 +106,12 @@ const page = () => {
                   </div>
                 </div>
 
-                {/* News Title */}
                 <h3 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter text-slate-900 mb-12 leading-none">
                   {article.title}
                 </h3>
 
-                {/* Content Row */}
                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-start`}>
                   
-                  {/* Image Column */}
                   <div className={`relative h-[500px] rounded-[1rem] overflow-hidden border border-slate-100 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                     <img 
                       src={article.image} 
@@ -129,7 +123,6 @@ const page = () => {
                     </div>
                   </div>
 
-                  {/* Text Column */}
                   <div className={`space-y-10 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                     <p className="text-slate-600 text-xl md:text-2xl font-medium italic leading-relaxed">
                       {article.desc}

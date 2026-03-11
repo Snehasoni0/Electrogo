@@ -10,7 +10,7 @@ const LeadFormSection = () => {
   const [interest, setInterest] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const captchaRef = useRef(null); // Ref for captcha
+  const captchaRef = useRef(null); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,14 +21,13 @@ const LeadFormSection = () => {
       interest: interest,
       name: formData.get('name').trim(),
       phone: formData.get('phone').trim(),
-      email: formData.get('email').trim(), // New Email Field
+      email: formData.get('email').trim(), 
       sqft: formData.get('sqft') || "N/A",
       city: formData.get('city') || "N/A",
       company: formData.get('company') || "N/A",
       km: formData.get('km') || "N/A",
     };
 
-    // --- VALIDATIONS ---
     if (!payload.interest) return toast.error("Please select an interest path.");
     if (payload.name.length < 3) return toast.error("Please enter a valid name.");
 
@@ -41,10 +40,8 @@ const LeadFormSection = () => {
       return toast.error("Please enter a valid 10-digit phone number.");
     }
 
-    // Update payload to use only digits for the spreadsheet
     payload.phone = phoneDigits;
 
-    // --- CAPTCHA VALIDATION ---
     const captchaToken = captchaRef.current?.getValue();
     if (!captchaToken) {
       return toast.error("Security Check Required: Please click the checkbox.");
@@ -70,7 +67,7 @@ const LeadFormSection = () => {
 
       e.target.reset();
       setInterest('');
-      captchaRef.current?.reset(); // Reset captcha
+      captchaRef.current?.reset(); 
 
     } catch (error) {
       toast.error("TRANSMISSION FAILED. CHECK CONNECTION.");
@@ -99,7 +96,6 @@ const LeadFormSection = () => {
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
           className="w-full bg-gray-900 p-6 md:p-8 rounded-[1.5rem] shadow-2xl relative border border-gray-800"
         >
-          {/* Changed space-y-8 to space-y-4 to reduce gaps */}
           <form onSubmit={handleSubmit} className="relative z-10 space-y-4">
 
             <div className="space-y-2">
@@ -161,12 +157,10 @@ const LeadFormSection = () => {
                   placeholder="Phone Number"
                   onInput={(e) => {
                     const originalValue = e.target.value;
-                    // Remove anything that isn't 0-9
                     const cleanValue = originalValue.replace(/[^0-9]/g, '');
 
-                    // If the value changed, it means the user tried to enter a character
                     if (originalValue !== cleanValue) {
-                      e.target.value = cleanValue; // Force the clean value back into the box
+                      e.target.value = cleanValue; 
 
                       toast.warn("Numeric digits only", {
                         toastId: "numeric-only",
@@ -197,14 +191,11 @@ const LeadFormSection = () => {
           </form>
         </motion.div>
 
-        {/* Strategic Text (Column 2) remains same as your original snippet */}
         <div className="flex flex-col justify-center space-y-10 lg:h-full text-white">
-          {/* Content here... */}
           <div className="space-y-6 border-l-2 border-lime-400 pl-8">
             <h3 className="text-3xl md:text-4xl font-black uppercase italic leading-none">Rajasthan EV Expansion <br /><span className="text-lime-400">Phase II Core.</span></h3>
             <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed max-w-lg">We are scaling the Jaipur-Ajmer-Jodhpur highway network. Secure your integration ahead of the April 2026 rollout.</p>
           </div>
-          {/* Icons section... */}
         </div>
       </div>
       <style jsx>{` .outline-text { -webkit-text-stroke: 1.5px #fff; } `}</style>

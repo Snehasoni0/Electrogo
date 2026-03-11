@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, ShieldCheck, Zap } from 'lucide-react';
 
 const PartnerHero = () => {
-  // Smooth scroll to form helper
   const scrollToForm = () => {
     const formElement = document.getElementById('partnership-form');
     formElement?.scrollIntoView({ behavior: 'smooth' });
@@ -13,7 +12,6 @@ const PartnerHero = () => {
   return (
     <section className="relative min-h-screen w-full bg-[#050609] flex items-center overflow-hidden font-sans">
       
-      {/* 1. DYNAMIC BACKGROUND LAYER */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?q=80&w=2500&auto=format&fit=crop" 
@@ -23,10 +21,8 @@ const PartnerHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#050609] via-[#050609]/80 to-transparent" />
       </div>
 
-      {/* 2. MAIN CONTENT GRID */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-16 items-center mt-24">
         
-        {/* LEFT SIDE: SEO-Hook Narrative (7 Columns) */}
         <div className="lg:col-span-7 space-y-3 md:space-y-8 ">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +53,6 @@ const PartnerHero = () => {
           </motion.button>
         </div>
 
-        {/* RIGHT SIDE: 3D ROI Glassmorphic Card (5 Columns) */}
         <div className="lg:col-span-5 relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotateY: 20 }}
@@ -66,7 +61,6 @@ const PartnerHero = () => {
             className="relative bg-white/5 backdrop-blur-3xl border border-white/10 p-10 rounded-[48px] shadow-2xl overflow-hidden group hover:border-lime-500/30 transition-colors"
             style={{ perspective: "1000px" }}
           >
-            {/* Inner Glow Effect */}
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-lime-500/10 rounded-full blur-[100px]" />
 
             <div className="relative z-10 space-y-10">
@@ -111,7 +105,6 @@ const PartnerHero = () => {
             </div>
           </motion.div>
           
-          {/* Decorative floating element */}
           <div className="absolute -bottom-6 -left-6 bg-lime-500/20 backdrop-blur-md border border-lime-500/30 px-6 py-3 rounded-full hidden lg:block">
             <span className="text-[10px] font-black text-lime-500 uppercase tracking-widest">Jodhpur Hub Active</span>
           </div>

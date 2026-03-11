@@ -12,10 +12,8 @@ const WhyNow = () => {
           <div className="w-20 h-1.5 bg-lime-500 mx-auto rounded-full"></div>
         </div>
 
-        {/* Row 2 - Content + Image */}
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
-          {/* LEFT CONTENT */}
           <div className="order-2 md:order-1">
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
               Rajasthan is a land of history and beauty, but our urban air
@@ -39,16 +37,12 @@ const WhyNow = () => {
             </p>
           </div>
 
-          {/* RIGHT IMAGE WITH "TWISTED" ELEMENTS */}
           <div className="relative order-1 md:order-2 flex justify-center items-center py-10">
             
-            {/* 1. The Twisted "Ghost" Background (Shadow Frame) */}
             <div className="absolute inset-0 border-2 border-gray-950/5 rounded-[40px] transform rotate-6 scale-105 -z-10 bg-stone-50"></div>
             
-            {/* 2. The Skewed Accent Frame */}
             <div className="absolute inset-0 bg-lime-400/20 rounded-[40px] transform -rotate-3 scale-100 -z-10 border border-lime-400/30"></div>
 
-            {/* 3. The Main Image Container */}
             <div className="relative z-10 w-full group">
                 <img
                     src="https://images.unsplash.com/photo-1671782584185-1300064c5289"
@@ -56,13 +50,11 @@ const WhyNow = () => {
                     className="rounded-[32px] shadow-2xl object-cover w-full h-[400px] grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
                 
-                {/* 4. Glassmorphism Floating Badge */}
                 <div className="absolute -bottom-6 -left-6 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white max-w-[200px] hidden lg:block">
                     <p className="text-xs font-black uppercase tracking-widest text-lime-600 mb-1">Statewide</p>
                     <p className="text-sm font-bold text-gray-950 leading-tight">Engineered for Rajasthan's terrain.</p>
                 </div>
 
-                {/* 5. Twisted Decorative Corner Line */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-lime-500 rounded-tr-[40px]"></div>
             </div>
 

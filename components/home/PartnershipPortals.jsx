@@ -6,17 +6,14 @@ import { Zap, Building2, ArrowRight } from "lucide-react";
 const PartnershipPortals = () => {
   return (
     <section className="relative w-full overflow-hidden bg-[#05070a]">
-      {/* Central Divider Glow - Only visible on Desktop */}
       <div className="hidden md:block absolute left-1/2 top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-lime-400 to-transparent z-30 opacity-50 shadow-[0_0_20px_#a3e635]"></div>
 
       <div className="flex flex-col md:flex-row min-h-[600px] lg:h-[80vh]">
         
-        {/* LEFT PORTAL: HOSTING */}
         <motion.div 
           whileHover="hover"
           className="relative flex-[1] group flex flex-col justify-center items-center px-8 py-20 lg:px-20 overflow-hidden bg-gray-950 transition-all duration-700 ease-in-out hover:flex-[1.2]"
         >
-          {/* Animated Tech Pattern Background */}
           <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
              <div className="absolute inset-0 bg-gradient-to-br from-lime-500/20 via-transparent to-transparent"></div>
@@ -48,12 +45,10 @@ const PartnershipPortals = () => {
           </div>
         </motion.div>
 
-        {/* RIGHT PORTAL: CORPORATE */}
         <motion.div 
           whileHover="hover"
           className="relative flex-[1] group flex flex-col justify-center items-center px-8 py-20 lg:px-20 overflow-hidden bg-white transition-all duration-700 ease-in-out hover:flex-[1.2]"
         >
-          {/* Subtle Grid Background */}
           <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
                style={{ backgroundImage: `radial-gradient(#000 1.5px, transparent 0)`, backgroundSize: '30px 30px' }} 
           />

@@ -32,14 +32,12 @@ const ZeroPromise = () => {
     <section className="py-24 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* HEADER: Dynamic Centered */}
         <div className="flex flex-col items-center mb-16 text-center space-y-4">
           <h2 className="text-5xl md:text-7xl font-black text-[#0d1117] uppercase italic tracking-tighter">
             Zero <span className="text-lime-400">Exceptions</span> !
           </h2>
         </div>
 
-        {/* INTERACTIVE CARDS: Horizontal Scroll on Mobile, Grid on Desktop */}
         <div className="flex overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
           {promises.map((item, i) => (
             <motion.div
@@ -49,7 +47,6 @@ const ZeroPromise = () => {
             >
               <div className="relative h-[380px] w-full p-8 rounded-[3rem] bg-[#0d1117] overflow-hidden flex flex-col justify-between shadow-2xl transition-all duration-500 group-hover:shadow-lime-500/10">
                 
-                {/* 1. Header Logic */}
                 <div className="flex justify-between items-start z-10">
                   <div className="p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 text-lime-500">
                     {item.icon}
@@ -59,7 +56,6 @@ const ZeroPromise = () => {
                   </span>
                 </div>
 
-                {/* 2. Content */}
                 <div className="z-10 space-y-4">
                   <h3 className="text-4xl font-black text-white uppercase italic leading-none">
                     {item.title}
@@ -69,7 +65,6 @@ const ZeroPromise = () => {
                   </p>
                 </div>
 
-                {/* 3. Tactical Ghost Footer */}
                 <div className="z-10 flex items-center gap-2">
                   <div className="h-[2px] w-8 bg-lime-500" />
                   <span className="text-[9px] font-mono text-white/20 uppercase tracking-[0.4em] font-black">
@@ -77,19 +72,16 @@ const ZeroPromise = () => {
                   </span>
                 </div>
 
-                {/* 4. Massive Ghost ID (Visual Depth) */}
                 <span className="absolute -bottom-8 -right-8 text-[12rem] font-black text-white/[0.03] italic leading-none pointer-events-none group-hover:text-lime-500/[0.05] transition-colors duration-500">
                   {item.id}
                 </span>
 
-                {/* 5. Animated Background Mesh */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* MOBILE NAVIGATION INDICATOR */}
         <div className="flex justify-center gap-2 md:hidden">
           {promises.map((_, i) => (
             <div key={i} className={`h-1 rounded-full transition-all ${i === 0 ? 'w-8 bg-lime-500' : 'w-2 bg-slate-200'}`} />

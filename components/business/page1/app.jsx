@@ -1,13 +1,12 @@
 "use client";
 import React, { useState, useEffect, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Search, ShieldCheck, Zap, Navigation } from "lucide-react";
 
 const TacticalRadar = () => {
   const [time, setTime] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect screen size for layout-specific logic
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -26,7 +25,6 @@ const TacticalRadar = () => {
   const rotation = useMemo(() => {
     const amplitude = 60;
     const baseRotation = Math.sin(time) * amplitude;
-    // On mobile, we add 90 degrees to make it sweep Left-to-Right instead of Top-to-Bottom
     return isMobile ? baseRotation + 90 : baseRotation;
   }, [time, isMobile]);
 
@@ -37,7 +35,6 @@ const TacticalRadar = () => {
   ];
 
   const activeIndex = useMemo(() => {
-    // Adjusted logic for mobile horizontal sweep
     const checkVal = isMobile ? rotation - 90 : rotation;
     if (checkVal < -20) return 0;
     if (checkVal >= -20 && checkVal <= 20) return 1;
@@ -47,17 +44,14 @@ const TacticalRadar = () => {
   return (
     <section className="relative min-h-screen bg-[#030712] flex items-center justify-center px-6 py-24 md:py-20 overflow-hidden">
       
-      {/* HEADER - Added pt-4 on mobile to prevent overlap */}
       <div className="absolute top-6 md:top-10 left-6 md:left-12 z-20">
         <h3 className="text-white font-black italic text-3xl md:text-5xl tracking-tighter uppercase">
           App <span className="text-lime-400 not-italic">Experience</span>
         </h3>
       </div>
 
-      {/* Grid: Columns on desktop, Flex-col on mobile with more gap */}
       <div className="max-w-7xl w-full flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-16 items-center mt-12 md:mt-0">
 
-        {/* RADAR: Horizontal sweep on mobile */}
         <div className="relative flex justify-center scale-75 md:scale-100 py-4">
           <div className="relative flex items-center justify-center">
             <div className="absolute w-[280px] h-[280px] md:w-[320px] md:h-[320px] border border-white/10 rounded-full" />
@@ -80,7 +74,6 @@ const TacticalRadar = () => {
           </div>
         </div>
 
-        {/* FEATURES: Centered and spaced on mobile */}
         <div className="w-full max-w-md mx-auto space-y-4 md:space-y-6">
           {features.map((feature, index) => {
             const Icon = feature.icon;

@@ -7,21 +7,17 @@ const CityEVHero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       
-      {/* 1. BACKGROUND IMAGE WITH COMMAND OVERLAY */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1642665057087-8d12575e0a00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXYlMjByaWRlfGVufDB8fDB8fHww" 
           alt="Premium Electric Sedan"
           className="w-full h-full object-cover grayscale brightness-[0.4]"
         />
-        {/* Modern UI Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/80 via-transparent to-[#0d1117]" />
       </div>
 
-      {/* 2. MAIN CONTENT HUB */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-        {/* H1: Premium Headline */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +29,6 @@ const CityEVHero = () => {
           City Ride.
         </motion.h1>
 
-        {/* Sub-text: Geographic Target */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -44,7 +39,6 @@ const CityEVHero = () => {
           <span className="text-white font-bold">Jaipur • Jodhpur • Udaipur.</span>
         </motion.p>
 
-        {/* CTA Button */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -58,7 +52,6 @@ const CityEVHero = () => {
         </motion.div>
       </div>
 
-      {/* 3. JUMPING SCROLL INDICATOR */}
       <motion.div 
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -71,7 +64,6 @@ const CityEVHero = () => {
         </div>
       </motion.div>
 
-      {/* Modern UI Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0d1117] to-transparent z-[5]" />
       <style jsx>{`
         .stroke-text {

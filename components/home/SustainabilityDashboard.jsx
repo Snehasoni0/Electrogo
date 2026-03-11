@@ -20,7 +20,7 @@ const stats = [
     suffix: "+",
     icon: Users,
     color: "#0891b2",
-    offset: "40px" // Pushes the card down for a staggered look
+    offset: "40px" 
   },
   { 
     label: "Solar Network", 
@@ -47,7 +47,6 @@ const SustainabilityDashboard = () => {
     <section className="relative bg-white py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* UNIQUE TOP HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-10 border-b border-slate-100">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -71,7 +70,6 @@ const SustainabilityDashboard = () => {
           </motion.div>
         </div>
 
-        {/* STAGGERED STATS GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 pt-10">
           {stats.map((stat, index) => (
             <StatCard key={index} stat={stat} index={index} />
@@ -103,13 +101,11 @@ const StatCard = ({ stat, index }) => {
     >
       <div className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col items-center text-center overflow-hidden">
         
-        {/* Background Visual Element (Circle) */}
         <div 
           className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-[0.03] transition-transform duration-700 group-hover:scale-150"
           style={{ backgroundColor: stat.color }}
         />
 
-        {/* Icon Header */}
         <div className="relative mb-6">
           <div 
             className="w-16 h-16 rounded-2xl flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform duration-500"
@@ -126,7 +122,6 @@ const StatCard = ({ stat, index }) => {
           </motion.div>
         </div>
 
-        {/* Value Area */}
         <div className="flex flex-col mb-4">
           <div className="flex items-baseline justify-center gap-1">
             <motion.span className="text-5xl font-black text-slate-900 tracking-tighter italic">
@@ -145,7 +140,6 @@ const StatCard = ({ stat, index }) => {
           {stat.sub}
         </p>
 
-        {/* Bottom Progress Bar */}
         <div className="absolute bottom-0 left-0 w-full h-1.5 bg-slate-50 overflow-hidden">
           <motion.div 
             initial={{ x: "-100%" }}

@@ -115,7 +115,6 @@ const Footer = () => {
 
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-6 text-center text-sm text-gray-500">
           © 2026 Electrogo Mobility Pvt Ltd. | Made with ❤️ for Rajasthan.
         </div>

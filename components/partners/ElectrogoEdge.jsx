@@ -11,13 +11,11 @@ const ElectrogoEdge = () => {
     { title: "Brand Prestige", desc: "Align with Rajasthan’s most innovative green-tech mobility brand.", icon: <Trophy size={24} />, color: "text-purple-500" },
   ];
 
-  // Duplicate the array to create the infinite loop seam
   const infiniteEdges = [...baseEdges, ...baseEdges];
 
   return (
     <section className="relative w-full h-screen bg-gray-950 flex flex-col overflow-hidden font-sans">
       
-      {/* 1. TOP HEADER BLOCK */}
       <div className="w-full pt-16 px-8 md:px-24">
         <div className="max-w-7xl mx-auto border-b border-white/5 pb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -30,10 +28,8 @@ const ElectrogoEdge = () => {
         </div>
       </div>
 
-      {/* 2. TWO-COLUMN INTERACTIVE CONTENT */}
       <div className="flex-1 w-full max-w-7xl mx-auto px-8 md:px-24 flex flex-col md:flex-row items-center gap-12">
         
-        {/* LEFT: STATIC DESCRIPTION */}
         <div className="w-full md:w-1/2 space-y-6">
           <p className="text-gray-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
             We don't just provide vehicles; we provide a <span className="text-white italic">full-spectrum ecosystem</span> designed for high-uptime operations in the Indian corridor.
@@ -45,10 +41,9 @@ const ElectrogoEdge = () => {
           </div>
         </div>
 
-        {/* RIGHT: AUTOSCROLLING LIST */}
         <div className="w-full md:w-1/2 h-[500px] relative overflow-hidden mask-fade-edges">
           <motion.div 
-            animate={{ y: [0, "-50%"] }} // Loops perfectly through the doubled array
+            animate={{ y: [0, "-50%"] }} 
             transition={{ 
               duration: 20, 
               repeat: Infinity, 

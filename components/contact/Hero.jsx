@@ -6,7 +6,6 @@ const ContactHero = () => {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       
-      {/* BACKGROUND LAYER */}
       <motion.div 
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
@@ -18,11 +17,9 @@ const ContactHero = () => {
           alt="EV Infrastructure"
           className="w-full h-full object-cover grayscale brightness-[0.4]"
         />
-        {/* THE OVERLAY: Deep Vignette & Dark Tint */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#05070a]/80 via-[#05070a]/40 to-[#05070a]" />
       </motion.div>
 
-      {/* CONTENT LAYER */}
       <div className="relative z-10 max-w-4xl px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,18 +28,15 @@ const ContactHero = () => {
           className="space-y-6"
         >
 
-          {/* THE TITLE */}
           <h1 className="text-6xl md:text-9xl font-black text-white uppercase italic tracking-tighter leading-none">
             CONTACT <span className="text-lime-500 stroke-text">US.</span>
           </h1>
 
-          {/* THE DESCRIPTION */}
           <p className="max-w-xl mx-auto text-slate-300 text-lg md:text-xl font-medium leading-relaxed italic">
             Initialize communication with Rajasthan's premier EV-first mobility ecosystem. 
             Our Command Center in Jodhpur is ready to process your fleet and infrastructure inquiries.
           </p>
 
-          {/* THE INDICATOR */}
           <div className="flex flex-col items-center mt-12 gap-4">
             <div className="h-16 w-[1px] bg-gradient-to-b from-lime-500 to-transparent" />
             <span className="text-[10px] text-slate-500 font-mono uppercase tracking-[0.3em]">Scroll to Transmit</span>

@@ -40,7 +40,6 @@ const FourPillars = () => {
   return (
     <section className="bg-white py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <span className="text-lime-600 font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
@@ -56,7 +55,6 @@ const FourPillars = () => {
           </p>
         </div>
 
-        {/* Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
           {pillars.map(({ title, subtitle, description, image, stagger }, index) => (
             <div
@@ -66,7 +64,6 @@ const FourPillars = () => {
               className={`relative group h-[500px] rounded-[40px] overflow-hidden cursor-pointer transition-all duration-700 
                 ${stagger ? "lg:-translate-y-12" : "translate-y-0"}`}
             >
-              {/* Image with Dark/Grayscale Overlay */}
               <Image
                 src={image}
                 alt={subtitle}
@@ -75,18 +72,14 @@ const FourPillars = () => {
                   ${active === index ? "grayscale-0" : "grayscale opacity-90"}`}
               />
 
-              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/20 to-transparent"></div>
 
-              {/* Top Accent: The Arrow */}
               <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-lime-500 group-hover:border-lime-500 group-hover:text-gray-950 transition-all duration-500">
                 <ArrowUpRight size={20} />
               </div>
 
-              {/* Corner Pattern (About-style) */}
               <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-lime-500 rounded-tl-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              {/* Content Panel */}
               <div className="absolute bottom-0 left-0 w-full p-8 transition-transform duration-500">
                 <p className="text-lime-400 font-bold text-xs uppercase tracking-widest mb-2">
                   {subtitle}

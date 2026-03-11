@@ -19,7 +19,6 @@ const MapSection = () => {
   return (
     <section className="bg-white">
       
-      {/* 1. TOP HEADER SECTION (CLEAR OF MAP) */}
       <div className="py-12 px-6 text-center bg-white">
         <div className="max-w-4xl mx-auto space-y-4">
           <motion.div 
@@ -45,7 +44,6 @@ const MapSection = () => {
         </div>
       </div>
 
-      {/* 2. THE CLEAR MAP (NO OVERLAYS) */}
       <div className="w-full h-[60vh] md:h-[70vh] border-y border-slate-100 relative shadow-inner overflow-hidden">
         <MapContainerView />
       </div>

@@ -15,11 +15,9 @@ const HorizontalRoadmap = () => {
   const isInView = useInView(sectionRef, { amount: 0.2, once: true });
   const journeyProgress = useMotionValue(0);
   
-  // Desktop Transforms
   const busX = useTransform(journeyProgress, [0, 1], ["0%", "100%"]);
   const busY = useTransform(journeyProgress, [0, 0.25, 0.5, 0.75, 1], ["60%", "30%", "65%", "35%", "50%"]);
 
-  // Mobile Transforms: Bus moves from 0% to 100% of the vertical container
   const busMobileY = useTransform(journeyProgress, [0, 1], ["0%", "100%"]);
 
   useEffect(() => {
@@ -36,7 +34,6 @@ const HorizontalRoadmap = () => {
       ref={sectionRef}
       className="relative w-full overflow-hidden bg-gray-950 py-24 flex flex-col justify-center"
     >
-      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=2000"
@@ -46,7 +43,6 @@ const HorizontalRoadmap = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-transparent to-gray-950"></div>
       </div>
 
-      {/* Heading */}
       <div className="relative z-20 px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -65,7 +61,6 @@ const HorizontalRoadmap = () => {
         </motion.div>
       </div>
 
-      {/* ================= DESKTOP ROADMAP ================= */}
       <div className="hidden md:block relative w-full h-[50vh] z-10">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <path d="M 0 60 C 20 60, 30 30, 40 30 C 50 30, 60 65, 70 65 C 80 65, 90 35, 100 35" fill="none" stroke="rgba(163,230,53,0.08)" strokeWidth="0.15" />
@@ -85,9 +80,7 @@ const HorizontalRoadmap = () => {
         ))}
       </div>
 
-      {/* ================= MOBILE ROADMAP ================= */}
       <div className="md:hidden px-6 relative">
-        {/* Animated Vertical Line */}
         <div className="absolute left-10 top-0 h-full w-[2px] bg-gray-800">
            <motion.div 
              style={{ scaleY: journeyProgress, originY: 0 }} 
@@ -95,7 +88,6 @@ const HorizontalRoadmap = () => {
            />
         </div>
 
-        {/* The Animated Bus on Mobile */}
         <motion.div
           style={{ top: busMobileY, y: "-50%" }}
           className="absolute left-[26px] z-50 pointer-events-none"
@@ -115,7 +107,6 @@ const HorizontalRoadmap = () => {
   );
 };
 
-// Desktop Card
 const HorizontalCard = ({ step, progress }) => {
   const opacity = useTransform(progress, [step.threshold - 0.03, step.threshold, 1], [0, 1, 1]);
   const yOffset = useTransform(progress, [step.threshold - 0.05, step.threshold], [15, 0]);
@@ -138,9 +129,7 @@ const HorizontalCard = ({ step, progress }) => {
   );
 };
 
-// Mobile Card Component
 const MobileCard = ({ step, progress }) => {
-  // Items appear only once the bus reaches the threshold
   const opacity = useTransform(progress, [step.threshold - 0.05, step.threshold], [0, 1]);
   const xOffset = useTransform(progress, [step.threshold - 0.05, step.threshold], [20, 0]);
 

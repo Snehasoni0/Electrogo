@@ -31,7 +31,6 @@ const TechSpecsGrid = () => {
   return (
     <section className="relative min-h-screen w-full bg-white flex items-center justify-center py-12 px-6 md:px-12 overflow-hidden font-sans">
       
-      {/* 1. BACKGROUND SCHEMATIC (Subtle Grid) */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
         <div className="h-full w-full" style={{ 
           backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', 
@@ -41,7 +40,6 @@ const TechSpecsGrid = () => {
 
       <div className="relative z-10 max-w-7xl w-full">
         
-        {/* HEADER: Professional Directive */}
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-xl">
             <motion.div 
@@ -61,7 +59,6 @@ const TechSpecsGrid = () => {
           </div>
         </div>
 
-        {/* THE TECHNICAL GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {specs.map((spec, i) => (
             <motion.div
@@ -71,10 +68,8 @@ const TechSpecsGrid = () => {
               transition={{ delay: i * 0.1 }}
               className="group relative p-10 rounded-[40px] bg-white border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500"
             >
-              {/* Corner Accent */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-lime-500/5 rounded-bl-[100px] group-hover:bg-lime-500/10 transition-colors -z-0" />
               
-              {/* Icon & Status */}
               <div className="flex justify-between items-start mb-16 relative z-10">
                 <div className="p-4 bg-slate-900 text-white group-hover:bg-lime-500 group-hover:text-black rounded-[20px] transition-all shadow-lg">
                   {spec.icon}
@@ -97,7 +92,6 @@ const TechSpecsGrid = () => {
                 </p>
               </div>
 
-              {/* Technical Blueprint Footer */}
               <div className="pt-8 border-t border-slate-50 flex items-center justify-between relative z-10">
                 <div className="flex items-center gap-2">
                   <Activity size={14} className="text-slate-200" />

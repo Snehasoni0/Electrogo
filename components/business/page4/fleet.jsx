@@ -34,10 +34,8 @@ const FleetFeaturesXray = () => {
   ];
 
   return (
-    /* Changed to min-h-screen for mobile flexibility */
     <section className="relative min-h-screen lg:h-screen w-full bg-gray-950 flex flex-col lg:flex-row items-center justify-center py-24 px-6 md:px-12 overflow-hidden font-sans">
       
-      {/* 1. SECTION LOGO / HEADER - Adjusted positioning for mobile */}
       <div className="absolute top-8 left-6 md:top-12 md:left-12 z-20 flex items-center gap-4">
         <div className="h-8 md:h-10 w-px bg-lime-500" />
         <div>
@@ -46,13 +44,12 @@ const FleetFeaturesXray = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-12 lg:mt-0">
-        
-        {/* LEFT: TACTICAL SELECTOR */}
+
         <div className="lg:col-span-5 space-y-4">
           {features.map((item, i) => (
             <motion.div
               key={i}
-              onClick={() => setActiveTab(i)} // Better for mobile interaction
+              onClick={() => setActiveTab(i)} 
               onMouseEnter={() => setActiveTab(i)}
               className={`cursor-pointer p-6 rounded-[24px] border transition-all duration-300 ${
                 activeTab === i 
@@ -77,7 +74,6 @@ const FleetFeaturesXray = () => {
           ))}
         </div>
 
-        {/* RIGHT: DATA VISUALIZER */}
         <div className="lg:col-span-7 relative bg-[#0d1117] border border-white/5 rounded-[32px] md:rounded-[48px] p-8 md:p-16 min-h-[400px] lg:h-[500px] flex flex-col justify-center overflow-hidden">
           
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 

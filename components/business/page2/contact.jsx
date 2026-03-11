@@ -8,7 +8,7 @@ import GoogleCaptcha from '../../GoogleCaptcha';
 
 const B2GContactForm = () => {
   const [loading, setLoading] = useState(false);
-  const captchaRef = useRef(null); // Ref for captcha
+  const captchaRef = useRef(null); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,14 +21,12 @@ const B2GContactForm = () => {
       email: formData.get('email').trim(),
     };
 
-    // --- VALIDATIONS ---
     if (payload.dept.length < 3) return toast.error("Please enter a valid Department name.");
     if (payload.designation.length < 2) return toast.error("Please enter a valid Designation.");
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(payload.email)) return toast.error("Invalid official email address.");
 
-    // --- CAPTCHA VALIDATION ---
     const captchaToken = captchaRef.current?.getValue();
     if (!captchaToken) {
       return toast.error("Security Check Required: Please click the checkbox.");
@@ -58,7 +56,7 @@ const B2GContactForm = () => {
       });
 
       e.target.reset();
-      captchaRef.current?.reset(); // Reset captcha on success
+      captchaRef.current?.reset(); 
     } catch (error) {
       toast.error("ENCRYPTION ERROR. RETRY TRANSMISSION.");
     } finally {

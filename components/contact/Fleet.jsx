@@ -35,7 +35,6 @@ const ContactDetails = () => {
     <section className="py-24 px-6 bg-white overflow-hidden selection:bg-lime-400">
       <div className="max-w-6xl mx-auto">
         
-        {/* REFINED HEADER */}
         <div className="mb-16 space-y-2 text-center md:text-left">
           <motion.div 
             initial={{ opacity: 0, x: -10 }}
@@ -52,7 +51,6 @@ const ContactDetails = () => {
           </h2>
         </div>
 
-        {/* COMPACT DARK ARCH CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {contactData.map((item, index) => (
             <motion.div
@@ -64,14 +62,12 @@ const ContactDetails = () => {
               whileHover={{ y: -8 }}
               className="relative group p-8 rounded-t-[8rem] rounded-b-[2rem] bg-[#0d1117] shadow-xl transition-all duration-500 border border-white/5"
             >
-              {/* Refined Icon Hub */}
               <div className="mb-10 flex justify-center relative">
                 <div className={`w-16 h-16 rounded-2xl ${item.accent} flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(163,230,53,0.3)]`}>
                   <item.icon size={24} className={item.iconColor} strokeWidth={2.5} />
                 </div>
               </div>
 
-              {/* Compact Text Content */}
               <div className="space-y-3 text-center">
                 <p className="text-[9px] font-mono uppercase tracking-[0.3em] text-slate-500 font-black">
                   {item.label}
@@ -85,14 +81,12 @@ const ContactDetails = () => {
                 </p>
               </div>
 
-              {/* Small Tactical Hint */}
               <div className="mt-8 flex justify-center">
                 <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-600 group-hover:border-lime-500 group-hover:text-lime-400 transition-all cursor-pointer bg-white/5">
                   <ArrowUpRight size={16} />
                 </div>
               </div>
 
-              {/* Ghost Index (Subtle) */}
               <span className="absolute bottom-6 right-8 text-4xl font-black text-white/[0.02] pointer-events-none uppercase italic">
                 0{index + 1}
               </span>

@@ -6,21 +6,17 @@ import { ArrowRight } from "lucide-react";
 export default function HomeAbout() {
   return (
     <section className="bg-white py-24 px-6 relative overflow-hidden">
-      {/* Subtle Leheriya Background Pattern (5% Opacity) */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')`, backgroundSize: '150px' }}>
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center relative z-10">
 
-        {/* LEFT - ARCHITECTURAL IMAGE DESIGN */}
         <div className="relative group">
           
-          {/* The "Twisted" Background Frames (Matching Why Now style) */}
           <div className="absolute inset-0 border-2 border-lime-500/20 rounded-[40px] transform rotate-6 scale-105 -z-10 bg-stone-50 transition-transform group-hover:rotate-2 duration-700"></div>
           <div className="absolute inset-0 bg-gray-950/5 rounded-[40px] transform -rotate-3 scale-100 -z-10 transition-transform group-hover:-rotate-1 duration-700"></div>
 
-          {/* Main Image Container */}
           <div className="relative overflow-hidden rounded-[40px] shadow-2xl border-8 border-white">
             <Image
               src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
@@ -30,7 +26,6 @@ export default function HomeAbout() {
               className="object-cover w-full h-[550px] grayscale group-hover:grayscale-0 transition-all duration-1000"
             />
 
-            {/* Floating Data Badge */}
             <div className="absolute bottom-8 right-8 bg-gray-950/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-white max-w-[180px] shadow-2xl">
                 <p className="text-lime-400 font-mono text-[10px] tracking-[0.2em] uppercase mb-2">Live Status</p>
                 <p className="text-sm font-bold leading-tight uppercase">Jodhpur Hub Operational</p>
@@ -41,11 +36,9 @@ export default function HomeAbout() {
             </div>
           </div>
           
-          {/* Corner Pointer (Electrogo Signature) */}
           <div className="absolute -top-6 -left-6 w-24 h-24 border-t-4 border-l-4 border-lime-500 rounded-tl-[40px]"></div>
         </div>
 
-        {/* RIGHT - CONTENT */}
         <div className="space-y-8">
           <div>
             <span className="text-lime-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">

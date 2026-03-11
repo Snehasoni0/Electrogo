@@ -17,7 +17,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR */}
       <nav
         className={`fixed top-0 left-0 w-full z-999 isolate transition-all duration-500 py-2 ${scrolled
           ? "bg-black/30 backdrop-blur-md shadow-md"
@@ -26,19 +25,16 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-          {/* Logo */}
           <Link href="/" className="w-28 z-1000">
             <img src="/logo.png" alt="logo" />
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8 font-medium text-white">
 
             <Link className="hover:text-blue-400 transition" href="/about">
               About
             </Link>
 
-            {/* Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setOpen(true)}
@@ -87,7 +83,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop CTA */}
           <Link
             href="/contact"
             className="hidden md:inline-flex items-center justify-center px-7 py-2.5 rounded-full font-semibold text-white 
@@ -97,7 +92,6 @@ export default function Navbar() {
           >
             Contact
           </Link>
-          {/* Hamburger */}
           <button
             className="md:hidden relative z-[1000] text-3xl text-white 
   w-12 h-12 flex items-center justify-center 
@@ -109,8 +103,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE MENU (FIXED FULL SCREEN) */}
-      {/* MOBILE MENU */}
       <div
         className={`fixed inset-0 z-[998] md:hidden bg-[#0f0f0f] 
   transform transition-transform duration-500 ease-in-out

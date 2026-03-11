@@ -34,7 +34,6 @@ const WhiteGlovePath = () => {
   return (
     <section className="relative min-h-screen w-full bg-white py-16 md:py-24 px-6 md:px-10 overflow-hidden font-sans">
       
-      {/* 1. HEADER SECTION */}
       <div className="max-w-xl relative z-20 mb-16 md:mb-0">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
@@ -56,7 +55,6 @@ const WhiteGlovePath = () => {
         </p>
       </div>
 
-      {/* 2. THE PATH (Dashed Line) - Visible only on Desktop to prevent mobile clutter */}
       <div className="absolute inset-0 z-10 pointer-events-none opacity-20 hidden md:block">
         <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none">
           <motion.path
@@ -71,7 +69,6 @@ const WhiteGlovePath = () => {
         </svg>
       </div>
 
-      {/* 3. RESPONSIVE CONTAINER */}
       <div className="relative md:absolute md:inset-0 flex flex-col md:block gap-10 z-20">
         {points.map((point, i) => (
           <motion.div
@@ -81,7 +78,6 @@ const WhiteGlovePath = () => {
             transition={{ delay: i * 0.2 }}
             className={`md:absolute ${point.desktopPos} flex flex-col ${point.align} w-full md:max-w-[280px] group`}
           >
-            {/* Styled Node */}
             <div className="relative mb-4 md:mb-6">
               <div className="w-6 h-6 bg-white rounded-full border-4 border-lime-500 shadow-xl z-10 relative flex items-center justify-center">
                   <div className="w-1.5 h-1.5 bg-lime-500 rounded-full" />
@@ -89,7 +85,6 @@ const WhiteGlovePath = () => {
               <div className="absolute inset-0 w-6 h-6 bg-lime-100 rounded-full animate-ping opacity-40" />
             </div>
             
-            {/* Card Content */}
             <div className="w-full p-6 rounded-2xl bg-slate-50/90 backdrop-blur-md border border-slate-100 group-hover:border-lime-300 group-hover:bg-white transition-all shadow-sm hover:shadow-xl hover:-translate-y-1 duration-300">
                <div className={`flex items-center gap-3 mb-4 ${point.align.includes('end') ? 'flex-row-reverse' : ''}`}>
                   <div className="p-2 bg-lime-50 text-lime-600 rounded-lg shrink-0 group-hover:bg-lime-500 group-hover:text-white transition-colors">
@@ -103,7 +98,6 @@ const WhiteGlovePath = () => {
                   {point.desc}
                </p>
                
-               {/* Decorative Data Bits */}
                <div className={`mt-5 flex gap-1 opacity-30 ${point.align.includes('center') ? 'justify-center' : point.align.includes('end') ? 'justify-end' : ''}`}>
                   <div className="h-1 w-8 bg-lime-500 rounded-full" />
                   <div className="h-1 w-2 bg-slate-400 rounded-full" />

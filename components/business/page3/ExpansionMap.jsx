@@ -11,7 +11,6 @@ const ExpansionRoadmap = () => {
       metric: "State Capital Hub",
       status: "Operational",
       icon: <Zap size={18} />,
-      // Shifting Jaipur down on mobile to clear the header
       y: "md:top-[15%] top-[22%]", 
       x: "md:left-[5%] left-[5%]",
     },
@@ -48,7 +47,6 @@ const ExpansionRoadmap = () => {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent" />
       </div>
 
-      {/* 2. SECTION HEADER */}
       <div className="absolute top-8 md:top-12 z-30 text-center px-6 pointer-events-none">
         <motion.div 
             initial={{ width: 0 }} 
@@ -64,7 +62,6 @@ const ExpansionRoadmap = () => {
         </p>
       </div>
 
-      {/* 3. THE LINE (Wavy for Desktop, Straight for Mobile) */}
       <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
         <svg 
           className="w-full h-full" 
@@ -72,7 +69,6 @@ const ExpansionRoadmap = () => {
           fill="none" 
           preserveAspectRatio="none"
         >
-          {/* Desktop Wavy Path */}
           <motion.path
             d="M 0 300 C 200 300 400 700 720 500 C 1040 300 1240 700 1440 300"
             className="hidden md:block"
@@ -83,7 +79,6 @@ const ExpansionRoadmap = () => {
             whileInView={{ pathLength: 1 }}
             transition={{ duration: 2.2, ease: "easeInOut" }}
           />
-          {/* Mobile Straight Vertical Path */}
           <motion.line
             x1="12%" y1="20%" x2="12%" y2="90%"
             className="block md:hidden"
@@ -97,7 +92,6 @@ const ExpansionRoadmap = () => {
         </svg>
       </div>
 
-      {/* 4. TACTICAL HUB NODES */}
       <div className="relative w-full h-full max-w-[1600px] mx-auto z-20">
         {points.map((point, i) => (
           <motion.div

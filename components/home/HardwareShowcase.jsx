@@ -45,14 +45,12 @@ const HardwareShowcase = () => {
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setRotate({ x: 0, y: 0 })}
     >
-      {/* HUD Grid Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{ backgroundImage: `radial-gradient(#a3e635 0.5px, transparent 0.5px)`, backgroundSize: '30px 30px' }}>
       </div>
 
       <div className="max-w-7xl mx-auto relative grid lg:grid-cols-12 gap-12 items-center">
         
-        {/* LEFT: Information Panel (The HUD) */}
         <div className="lg:col-span-4 z-20">
           
           <AnimatePresence mode="wait">
@@ -71,7 +69,6 @@ const HardwareShowcase = () => {
                 {active.description}
               </p>
 
-              {/* Real-time Stats UI */}
               <div className="grid grid-cols-3 gap-4 pt-6">
                 {Object.entries(active.stats).map(([key, val]) => (
                   <div key={key} className="border-l border-lime-500/30 pl-4">
@@ -84,7 +81,6 @@ const HardwareShowcase = () => {
           </AnimatePresence>
         </div>
 
-        {/* RIGHT: The 3D Car Showcase */}
         <div className="lg:col-span-8 relative">
           <motion.div
             style={{ 
@@ -95,7 +91,6 @@ const HardwareShowcase = () => {
             }}
             className="relative z-10"
           >
-            {/* Replace with your /images/home/car.png */}
             <Image
               src="/images/home/car.png" 
               alt="Electrogo Sedan"
@@ -104,7 +99,6 @@ const HardwareShowcase = () => {
               className="drop-shadow-[0_0_50px_rgba(163,230,53,0.2)]"
             />
 
-            {/* Hotspots */}
             {hotspots.map((spot) => (
               <button
                 key={spot.id}
@@ -117,7 +111,6 @@ const HardwareShowcase = () => {
                   <div className={`h-4 w-4 rounded-full border-2 border-white shadow-lg transition-colors ${active.id === spot.id ? 'bg-lime-400' : 'bg-gray-700'}`}></div>
                 </div>
                 
-                {/* Connector Line (SVG) - Shows on active */}
                 {active.id === spot.id && (
                     <motion.div 
                         initial={{ opacity: 0, scale: 0 }}
@@ -129,14 +122,12 @@ const HardwareShowcase = () => {
             ))}
           </motion.div>
 
-          {/* Decorative Background Circles */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-lime-500/10 rounded-full pointer-events-none"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-lime-500/5 rounded-full pointer-events-none"></div>
         </div>
 
       </div>
 
-      {/* Floating Scanning Line */}
       <motion.div 
         animate={{ top: ['0%', '100%', '0%'] }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}

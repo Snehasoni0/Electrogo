@@ -13,7 +13,6 @@ const InquirySection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 1. GATHER DATA
     const formData = new FormData(e.target);
     const payload = {
       name: formData.get('name').trim(),
@@ -23,7 +22,6 @@ const InquirySection = () => {
       sheetName: "contact"
     };
 
-    // 2. CLIENT-SIDE VALIDATIONS
     if (payload.name.length < 3) {
       return toast.error("Please enter a valid name.");
     }
@@ -37,8 +35,6 @@ const InquirySection = () => {
       return toast.error("Message is too short for a formal inquiry.");
     }
 
-    // 3. CAPTCHA VALIDATION
-    // We get the value from the reusable component via the ref
     const captchaToken = captchaRef.current?.getValue();
     if (!captchaToken) {
       return toast.error("Security Check Required: Please click the checkbox.");
@@ -62,9 +58,8 @@ const InquirySection = () => {
         style: { border: '1px solid #84cc16', color: '#fff', background: '#020617' }
       });
 
-      // 4. RESET EVERYTHING
       e.target.reset();
-      captchaRef.current?.reset(); // Clear the captcha for the next submission
+      captchaRef.current?.reset(); 
 
     } catch (error) {
       toast.error("Signal Lost. Please check connection.");
@@ -80,10 +75,8 @@ const InquirySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
           <div className="lg:col-span-6 space-y-10">
 
-            {/* ... Titles and existing UI ... */}
 
             <form onSubmit={handleSubmit} className="space-y-6 max-w-lg">
-              {/* Name Input */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Full Name</label>
                 <div className="flex items-center gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
@@ -92,7 +85,6 @@ const InquirySection = () => {
                 </div>
               </div>
 
-              {/* Email Input */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Email Address</label>
                 <div className="flex items-center gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
@@ -101,7 +93,6 @@ const InquirySection = () => {
                 </div>
               </div>
 
-              {/* Inquiry Selection */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Inquiry Type</label>
                 <div className="relative flex items-center gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
@@ -124,7 +115,6 @@ const InquirySection = () => {
                 </div>
               </div>
 
-              {/* Message */}
               <div className="group relative">
                 <label className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold mb-2 block">Message / Payload</label>
                 <div className="flex items-start gap-4 border border-gray-800 rounded-2xl p-4 focus-within:border-lime-500 transition-all bg-gray-900/50">
@@ -133,7 +123,6 @@ const InquirySection = () => {
                 </div>
               </div>
 
-              {/* USE YOUR REUSABLE COMPONENT HERE */}
               <GoogleCaptcha ref={captchaRef} />
 
               <motion.button
@@ -148,14 +137,12 @@ const InquirySection = () => {
             </form>
           </div>
 
-          {/* ... Rest of your image column ... */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="lg:col-span-6 relative group"
           >
-            {/* Custom Arch Shape Mask based on Reference */}
             <div className="relative h-[720px] w-full bg-slate-100 overflow-hidden rounded-t-[18rem] rounded-[18rem]shadow-2xl border-8 border-white">
               <img
                 src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=cro"
@@ -163,7 +150,6 @@ const InquirySection = () => {
                 className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-1000"
               />
 
-              {/* Content Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-12 md:p-16">
                 <div className="space-y-4">
                   <h4 className="text-3xl font-black text-white uppercase italic leading-tight">
@@ -185,7 +171,6 @@ const InquirySection = () => {
               </div>
             </div>
 
-            {/* Glowing Accent */}
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-lime-500 rounded-full blur-[80px] opacity-20" />
           </motion.div>
         </div>

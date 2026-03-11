@@ -11,7 +11,6 @@ const SolarToSocket = () => {
       
       <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* LEFT: CONTENT NARRATIVE (order-1 on mobile) */}
         <div className="order-1 lg:order-2 space-y-8">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="flex items-center gap-4">
             <div className="h-px w-12 bg-lime-500" />
@@ -45,7 +44,6 @@ const SolarToSocket = () => {
           </div>
         </div>
 
-        {/* RIGHT: SCHEMATIC (order-2 on mobile) */}
         <div className="order-2 lg:order-1 relative flex justify-center items-center">
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.div
@@ -57,19 +55,16 @@ const SolarToSocket = () => {
 
           <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 p-10 md:p-12 rounded-[48px] md:rounded-[60px] w-full max-w-md">
             <div className="flex flex-col items-center gap-8 md:gap-12">
-              {/* SUN */}
               <motion.div whileHover={{ rotate: 90 }} className="p-5 md:p-6 bg-lime-500 text-black rounded-[20px] shadow-[0_0_40px_rgba(163,230,53,0.4)]">
                 <Sun size={40} strokeWidth={2.5} className="md:w-[48px] md:h-[48px]" />
               </motion.div>
 
-              {/* CONNECTOR */}
               <div className="relative h-20 md:h-24 w-px bg-white/10">
                 <motion.div animate={{ top: ["0%", "100%"] }} transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
                   className="absolute left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-lime-500 rounded-full shadow-[0_0_10px_#84cc16]"
                 />
               </div>
 
-              {/* CHARGING STATION */}
               <div className="p-6 md:p-8 bg-slate-900 border border-white/10 rounded-[24px] w-full flex items-center justify-between group">
                 <div className="space-y-1">
                   <p className="text-[7px] font-mono font-black text-slate-500 uppercase tracking-widest">Load Verification</p>

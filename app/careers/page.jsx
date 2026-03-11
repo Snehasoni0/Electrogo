@@ -35,7 +35,6 @@ const page = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-lime-400 selection:text-black">
 
-      {/* 1. HERO SECTION */}
       <header className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 grayscale-[0.5]"
@@ -58,7 +57,6 @@ const page = () => {
         </div>
       </header>
 
-      {/* 2. RE-DESIGNED SECOND SECTION: THE CORE HUB */}
       <section className="py-10 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-5xl font-black uppercase italic tracking-tighter text-slate-900 leading-none">
@@ -68,7 +66,6 @@ const page = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-          {/* Decorative central line for 'Hub' feel */}
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-slate-100 -z-10" />
 
           {hubItems.map((item, i) => (
@@ -88,7 +85,6 @@ const page = () => {
         </div>
       </section>
 
-      {/* 3. THIRD SECTION: DARK THEME 6-ITEM GRID (gray-950) */}
       <section className="py-32 px-6 bg-gray-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center md:text-left mb-20 border-l-4 border-lime-400 pl-8">

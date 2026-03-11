@@ -5,12 +5,9 @@ import { Navigation, Compass, MapPin } from 'lucide-react';
 
 const RouteRoadmapSplit = () => {
   return (
-    /* Changed h-screen to min-h-screen for mobile to prevent content clipping */
     <section className="relative min-h-screen md:h-screen w-full flex flex-col md:flex-row bg-white overflow-hidden font-sans">
       
-      {/* 1. PHASE 01: THE INTER-CITY SPINE (Left Side) */}
       <motion.div 
-        /* hover flex only applies to md screens and up */
         whileHover={{ flex: 1.2 }}
         className="relative flex-1 min-h-[50vh] md:min-h-0 bg-slate-900 group transition-all duration-700 ease-in-out border-b md:border-b-0 md:border-r border-white/5 overflow-hidden"
       >
@@ -22,14 +19,12 @@ const RouteRoadmapSplit = () => {
           />
         </div>
         
-        {/* Adjusted padding for mobile (p-8) vs desktop (p-20) */}
         <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-20">
           <div className="space-y-4 md:space-y-6">
             <div className="flex items-center gap-4">
               <span className="text-lime-500 font-mono text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">Phase 01</span>
               <div className="h-px w-12 bg-lime-500/30" />
             </div>
-            {/* Scaled text size for mobile: text-4xl instead of 8xl */}
             <h2 className="text-4xl md:text-8xl font-black text-white uppercase italic tracking-tighter leading-none">
               Inter-City <br />
               <span className="text-lime-500 not-italic">Spine.</span>
@@ -58,7 +53,6 @@ const RouteRoadmapSplit = () => {
         </div>
       </motion.div>
 
-      {/* 2. PHASE 02: THE HERITAGE LOOPS (Right Side) */}
       <motion.div 
         whileHover={{ flex: 1.2 }}
         className="relative flex-1 min-h-[50vh] md:min-h-0 bg-white group transition-all duration-700 ease-in-out overflow-hidden"
@@ -105,7 +99,6 @@ const RouteRoadmapSplit = () => {
         </div>
       </motion.div>
 
-      {/* 3. CENTER DIVIDER ICON */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center">
         <div className="h-20 w-20 bg-lime-500 rounded-full flex items-center justify-center shadow-2xl border-8 border-white group">
           <MapPin size={24} className="text-black group-hover:scale-125 transition-transform" />

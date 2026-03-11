@@ -14,10 +14,8 @@ const ImpactHeroSplit = () => {
   }, []);
 
   return (
-    // Changed h-screen to min-h-screen and added responsive padding to prevent mobile cutoff
     <section className="relative min-h-screen md:h-screen w-full bg-[#050609] flex items-center justify-center overflow-hidden font-sans py-20 md:py-0">
 
-      {/* 1. BACKGROUND INFRASTRUCTURE LAYER */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1675116731363-c17d957f3444?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3VzdGFpbmFiaWxpdHl8ZW58MHx8MHx8fDA%3D"
@@ -28,14 +26,10 @@ const ImpactHeroSplit = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,_rgba(163,230,53,0.15),transparent_60%)]" />
       </div>
 
-      {/* 2. SPLIT-SCREEN CONTENT LAYER */}
-      {/* Changed order-1/2 logic to ensure Headline is always first on mobile */}
       <div className="relative z-10 h-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-12 md:py-24">
 
-        {/* LEFT SIDE: Authoritative Copy (Headline first on mobile) */}
         <div className="lg:col-span-7 flex flex-col justify-center space-y-6 md:space-y-10 order-1">
 
-          {/* H1 Headline - Adjusted font size for mobile */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,7 +41,6 @@ const ImpactHeroSplit = () => {
             <span className="text-lime-500 not-italic">Net-Zero</span> Future.
           </motion.h1>
 
-          {/* Sub-headline - Adjusted text size for mobile */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -58,23 +51,19 @@ const ImpactHeroSplit = () => {
           </motion.p>
         </div>
 
-        {/* RIGHT SIDE: Live Ticker Runner (Ticker second on mobile) */}
         <div className="lg:col-span-5 flex items-center justify-center lg:justify-end order-2">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6, ease: "backOut" }}
-            // Reduced padding and rounded corners for mobile
             className="relative px-8 py-10 md:px-16 md:py-16 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[32px] md:rounded-[48px] shadow-[0_0_120px_rgba(163,230,53,0.1)] group overflow-hidden w-full max-w-sm md:max-w-none"
           >
 
-            {/* Pulsing Status Corner */}
             <div className="absolute top-6 right-6 md:top-8 md:right-8 flex items-center gap-2">
               <Clock4 size={14} className="text-lime-600 animate-spin-slow" />
               <span className="text-[9px] font-mono font-black text-lime-500 uppercase tracking-widest">Live Ticker</span>
             </div>
 
-            {/* The Main Ticker Display - Responsive font sizes */}
             <div className="mt-4 md:mt-8 flex items-baseline gap-2 md:gap-6 justify-center">
               <span className="text-5xl md:text-[100px] font-black text-white italic tracking-tighter tabular-nums leading-none">
                 {count.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -84,7 +73,7 @@ const ImpactHeroSplit = () => {
             
             <div className='flex flex-col items-center'>
               <p className="mt-6 md:mt-8 text-center text-slate-400 font-mono text-[8px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold">
-                Carbon Emissions Prevented <br className="md:hidden" /> // projected offset 2026
+                Carbon Emissions Prevented <br className="md:hidden" /> 
               </p>
               <div className='h-0.5 w-16 md:w-20 bg-lime-400 mt-4'></div>
             </div>
@@ -92,7 +81,6 @@ const ImpactHeroSplit = () => {
         </div>
       </div>
 
-      {/* 3. SCROLL CUE - Hidden on very small screens to save space */}
       <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-3 opacity-20 hover:opacity-100 transition-opacity">
         <p className="text-[9px] font-mono text-white uppercase tracking-[0.5em]">Impact Tiers</p>
         <div className="w-10 h-1 border border-white/20 rounded-full overflow-hidden">

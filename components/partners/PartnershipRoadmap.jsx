@@ -32,7 +32,6 @@ const PartnershipRoadmap = () => {
 
   return (
     <section className="relative w-full min-h-screen bg-[#FDFDFD] py-24 px-6 md:px-24 overflow-hidden">
-      {/* 1. BRANDED HEADER */}
       <div className="max-w-7xl mx-auto mb-16">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
@@ -48,9 +47,7 @@ const PartnershipRoadmap = () => {
         </h2>
       </div>
 
-      {/* 2. THE INTERACTIVE TIMELINE ENGINE */}
       <div className="max-w-7xl mx-auto relative">
-        {/* Desktop Layout */}
         <div className="hidden md:grid grid-cols-3 gap-12 relative z-10">
           {steps.map((step, i) => (
             <motion.div
@@ -61,7 +58,6 @@ const PartnershipRoadmap = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
-              {/* Progress Line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-slate-100 mb-12">
                 <motion.div 
                   className="h-full bg-lime-600"
@@ -70,7 +66,6 @@ const PartnershipRoadmap = () => {
                 />
               </div>
 
-              {/* Content Card */}
               <div className="pt-12">
                 <div className={`mb-6 text-xs font-black tracking-widest transition-colors ${activeIndex === i ? 'text-lime-600' : 'text-slate-300'}`}>
                   {step.tag}
@@ -102,7 +97,6 @@ const PartnershipRoadmap = () => {
           ))}
         </div>
 
-        {/* Mobile Layout (Vertical Pulse) */}
         <div className="md:hidden space-y-8">
           {steps.map((step, i) => (
             <div key={i} className="flex gap-6">
@@ -122,7 +116,6 @@ const PartnershipRoadmap = () => {
         </div>
       </div>
 
-      {/* 3. CONTEXTUAL FOOTER */}
       <div className="max-w-7xl mx-auto pt-4 mt-2 border-t border-slate-100 flex flex-col md:flex-row justify-between items-end gap-8">
         <div className="max-w-md">
           <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4">

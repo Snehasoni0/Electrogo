@@ -4,9 +4,7 @@ import { Target, MessageSquare, Files, PieChart, Shield, Zap, Globe, Heart } fro
 const MissionAndValues = () => {
   return (
     <section className="w-full bg-white overflow-hidden border-t border-white">
-      {/* SECTION 1: MISSION (Dark Left, Light Right) */}
       <div className="flex flex-col lg:flex-row min-h-[700px] w-full">
-        {/* Dark Sidebar */}
         <div className="w-full lg:w-[40%] bg-gray-950 p-12 lg:p-24 flex flex-col justify-center">
           <span className="text-lime-400 font-bold tracking-widest text-xs mb-4 uppercase">Your Label</span>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
@@ -18,33 +16,25 @@ const MissionAndValues = () => {
           </p>
         </div>
 
-        {/* Light Content Area with Connecting Arrows */}
         <div className="w-full lg:w-[60%] bg-stone-50 p-8 lg:p-24 relative flex items-center justify-end">
           
-          {/* CENTRAL TARGET + CONNECTORS */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 hidden lg:block z-20">
             <div className="relative">
-              {/* The SVG Arrows - Drawing lines from center to the right */}
               <svg className="absolute top-1/2 left-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none" viewBox="0 0 400 400">
                 <path d="M40,200 L200,80" fill="none" stroke="#d9f99d" strokeWidth="2" strokeDasharray="4 4" />
                 <path d="M40,200 L220,200" fill="none" stroke="#a3e635" strokeWidth="3" />
                 <path d="M40,200 L200,320" fill="none" stroke="#d9f99d" strokeWidth="2" strokeDasharray="4 4" />
-                {/* Arrow Heads */}
                 <circle cx="200" cy="80" r="4" fill="#a3e635" />
                 <circle cx="220" cy="200" r="4" fill="#a3e635" />
                 <circle cx="200" cy="320" r="4" fill="#a3e635" />
               </svg>
 
-              {/* Target Circle */}
               <div className="w-48 h-48 bg-white rounded-full border-[12px] border-lime-200 shadow-2xl flex items-center justify-center relative">
-                <Target size={60} className="text-gray-900" />
-                {/* Dart Tail */}
-                
+                <Target size={60} className="text-gray-900" />                
               </div>
             </div>
           </div>
 
-          {/* Feature Cards */}
           <div className="w-full lg:max-w-lg space-y-6 relative z-10">
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex gap-6 items-start hover:shadow-md transition-shadow">
               <MessageSquare size={28} className="text-gray-900 shrink-0" />
@@ -73,9 +63,7 @@ const MissionAndValues = () => {
         </div>
       </div>
 
-      {/* SECTION 2: VALUES (Light Left, Dark Right) - REVERSED */}
       <div className="flex flex-col lg:flex-row-reverse min-h-[700px] w-full">
-        {/* Dark Sidebar */}
         <div className="w-full lg:w-[40%] bg-gray-950 p-12 lg:p-24 flex flex-col justify-center text-right items-end">
           <span className="text-lime-400 font-bold tracking-widest text-xs mb-4 uppercase">Core Values</span>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
@@ -87,18 +75,14 @@ const MissionAndValues = () => {
           </p>
         </div>
 
-        {/* Light Content Area with Reversed Arrows */}
         <div className="w-full lg:w-[60%] bg-stone-50 p-8 lg:p-24 relative flex items-center justify-start">
           
-          {/* CENTRAL TARGET + REVERSED CONNECTORS */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 hidden lg:block z-20">
             <div className="relative">
-               {/* SVG Arrows pointing to the left */}
                <svg className="absolute top-1/2 right-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-none" viewBox="0 0 400 400">
                 <path d="M360,200 L200,80" fill="none" stroke="#d9f99d" strokeWidth="2" strokeDasharray="4 4" />
                 <path d="M360,200 L180,200" fill="none" stroke="#a3e635" strokeWidth="3" />
                 <path d="M360,200 L200,320" fill="none" stroke="#d9f99d" strokeWidth="2" strokeDasharray="4 4" />
-                {/* Dots at endpoints */}
                 <circle cx="200" cy="80" r="4" fill="#a3e635" />
                 <circle cx="180" cy="200" r="4" fill="#a3e635" />
                 <circle cx="200" cy="320" r="4" fill="#a3e635" />
@@ -110,7 +94,6 @@ const MissionAndValues = () => {
             </div>
           </div>
 
-          {/* Feature Cards */}
           <div className="w-full lg:max-w-lg space-y-6 relative z-10">
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex gap-6 items-start">
               <Zap size={28} className="text-gray-900 shrink-0" />

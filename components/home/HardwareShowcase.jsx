@@ -92,7 +92,7 @@ const HardwareShowcase = () => {
             className="relative z-10"
           >
             <Image
-              src="/images/home/car.png" 
+              src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773305340/car_nbcfxg.png" 
               alt="Electrogo Sedan"
               width={1000}
               height={500}

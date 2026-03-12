@@ -9,7 +9,7 @@ const BusServiceHero = () => {
       
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2000&auto=format&fit=crop" 
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306805/photo-1701889052366-931ac640089c_cnjf1v.jpg" 
           alt="Electric Transit Hub"
           className="w-full h-full object-cover grayscale brightness-[0.3]"
         />

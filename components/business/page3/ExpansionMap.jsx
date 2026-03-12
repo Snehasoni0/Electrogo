@@ -40,7 +40,7 @@ const ExpansionRoadmap = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-lime-400 via-lime-50 to-white opacity-40" />
         <img 
-          src="https://images.unsplash.com/photo-1657486232260-8be85026c8e0?w=1200" 
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306803/photo-1657486232260-8be85026c8e0_kidco2.jpg" 
           alt="Aerial Highway Infrastructure"
           className="w-full h-full object-cover opacity-[0.05] grayscale"
         />

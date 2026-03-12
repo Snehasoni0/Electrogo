@@ -11,7 +11,7 @@ const HeroBanner = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src="/videos/hero-bg-video.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dxaj4o4xh/video/upload/v1773307098/hero-bg-video_h0u46s.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

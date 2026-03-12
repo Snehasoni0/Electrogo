@@ -117,9 +117,9 @@ const FleetFeaturesXray = () => {
             </motion.div>
           </AnimatePresence>
 
-          <div className="absolute -right-10 -bottom-10 md:-right-20 md:-bottom-20 opacity-10 pointer-events-none">
+          {/* <div className="absolute -right-10 -bottom-10 md:-right-20 md:-bottom-20 opacity-10 pointer-events-none">
              <Bus size={300} className="md:w-[400px] text-white rotate-[-15deg]" />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

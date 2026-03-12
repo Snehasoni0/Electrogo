@@ -9,7 +9,7 @@ const CityEVHero = () => {
       
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1642665057087-8d12575e0a00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXYlMjByaWRlfGVufDB8fDB8fHww" 
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306802/photo-1642665057087-8d12575e0a00_jx1uvn.jpg" 
           alt="Premium Electric Sedan"
           className="w-full h-full object-cover grayscale brightness-[0.4]"
         />

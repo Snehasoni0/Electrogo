@@ -5,7 +5,7 @@ const hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
 
       <img
-        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+        src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306758/photo-1503376780353-7e6692767b70_d0nxpy.jpg"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -44,7 +44,7 @@ const hero = () => {
           <div className="absolute -inset-6 bg-green-500/20 blur-3xl rounded-3xl"></div>
 
           <img
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+            src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306758/photo-1503376780353-7e6692767b70_d0nxpy.jpg"
             className="relative rounded-3xl shadow-2xl object-cover h-[350px] w-full opacity-80"
           />
 

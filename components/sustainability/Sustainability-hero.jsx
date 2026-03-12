@@ -18,7 +18,7 @@ const ImpactHeroSplit = () => {
 
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1675116731363-c17d957f3444?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3VzdGFpbmFiaWxpdHl8ZW58MHx8MHx8fDA%3D"
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306842/photo-1675116731363-c17d957f3444_bympdv.jpg"
           alt="Jodhpur Cityscape Aerial"
           className="w-full h-full object-cover"
         />

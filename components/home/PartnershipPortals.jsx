@@ -14,10 +14,9 @@ const PartnershipPortals = () => {
           whileHover="hover"
           className="relative flex-[1] group flex flex-col justify-center items-center px-8 py-20 lg:px-20 overflow-hidden bg-gray-950 transition-all duration-700 ease-in-out hover:flex-[1.2]"
         >
-          <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+          {/* <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
              <div className="absolute inset-0 bg-gradient-to-br from-lime-500/20 via-transparent to-transparent"></div>
-          </div>
+          </div> */}
 
           <span className="absolute -top-10 -left-10 text-[200px] font-black text-white/[0.03] select-none italic group-hover:text-lime-500/5 transition-colors duration-700">
             01

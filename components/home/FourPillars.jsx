@@ -8,28 +8,28 @@ const pillars = [
     title: "City Commute",
     subtitle: "City EV Cabs",
     description: "Silent, app-based, and zero-surge rides for the modern citizen.",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800",
+    image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773305340/photo-1593941707882-a5bba14938c7_el3f1q.jpg",
     stagger: false,
   },
   {
     title: "Protocol & Prestige",
     subtitle: "Govt. Executive Taxis",
     description: "Secure, compliant, and premium EV transit for Government Officials.",
-    image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&q=80&w=800",
+    image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773305341/photo-1619767886558-efdc259cde1a_ll2saa.jpg",
     stagger: true, // Higher position
   },
   {
     title: "The Grid",
     subtitle: "EV Charging Hubs",
     description: "Universal high-speed charging stations across major highways.",
-    image: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&fit=crop&q=80&w=800",
+    image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773305340/photo-1593941707882-a5bba14938c7_el3f1q.jpg",
     stagger: false,
   },
   {
     title: "Mass Transit",
     subtitle: "Electric Bus Services",
     description: "Zero-emission public transport for a cleaner, smarter Rajasthan.",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=800",
+    image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773305340/photo-1570125909232-eb263c188f7e_nw8nc9.jpg",
     stagger: true, // Higher position
   },
 ];

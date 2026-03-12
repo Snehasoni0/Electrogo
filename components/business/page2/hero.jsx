@@ -9,7 +9,7 @@ const GovtExecutiveHero = () => {
       
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1642665057087-8d12575e0a00?w=1200&auto=format&fit=crop&q=80" 
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306805/photo-1701889052366-931ac640089c_cnjf1v.jpg" 
           alt="Government Protocol EV"
           className="w-full h-full object-cover grayscale brightness-[0.25]"
         />

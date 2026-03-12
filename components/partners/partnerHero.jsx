@@ -14,7 +14,7 @@ const PartnerHero = () => {
       
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?q=80&w=2500&auto=format&fit=crop" 
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306909/photo-1672380135241-c024f7fbfa13_mwpoox.jpg" 
           alt="EV Charging Infrastructure Rajasthan"
           className="w-full h-full object-cover opacity-30 grayscale-[0.5]"
         />

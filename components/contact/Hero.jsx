@@ -13,7 +13,7 @@ const ContactHero = () => {
         className="absolute inset-0 z-0"
       >
         <img 
-          src="https://plus.unsplash.com/premium_photo-1679672989156-9bdea1329761?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306966/premium_photo-1679672989156-9bdea1329761_nfa0r6.jpg" 
           alt="EV Infrastructure"
           className="w-full h-full object-cover grayscale brightness-[0.4]"
         />

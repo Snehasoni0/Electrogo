@@ -84,7 +84,7 @@ const VerticalDeploymentFlow = () => {
       <div 
         className="absolute inset-0 z-0 bg-gray-700 bg-blend-multiply pointer-events-none transition-colors duration-1000"
         style={{ 
-          backgroundImage: `url('https://plus.unsplash.com/premium_photo-1758766936330-6fde8043b478?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGV2JTIwcmlkZXxlbnwwfHwwfHx8MA%3D%3D')`,
+          backgroundImage: `url('https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773308571/premium_photo-1758766936330-6fde8043b478_mknp46.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'grayscale(60%)' 

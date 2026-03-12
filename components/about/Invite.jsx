@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
 const Invite = () => {
@@ -7,7 +8,7 @@ const Invite = () => {
   return (
     <section className="relative py-24 bg-white overflow-hidden">
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
-           style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')`, backgroundSize: '200px' }}>
+           style={{ backgroundImage: `url('https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306765/pinstriped-suit_m7s0ej.png')`, backgroundSize: '200px' }}>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

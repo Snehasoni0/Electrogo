@@ -7,7 +7,7 @@ export default function HomeAbout() {
   return (
     <section className="bg-white py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')`, backgroundSize: '150px' }}>
+           style={{ backgroundImage: `url('https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773305345/pinstriped-suit_t4mran.png')`, backgroundSize: '150px' }}>
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center relative z-10">
@@ -19,7 +19,7 @@ export default function HomeAbout() {
 
           <div className="relative overflow-hidden rounded-[40px] shadow-2xl border-8 border-white">
             <Image
-              src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+              src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773305340/photo-1593941707882-a5bba14938c7_el3f1q.jpg"
               alt="Electrogo Fleet Rajasthan"
               width={600}
               height={700}

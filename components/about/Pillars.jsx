@@ -18,7 +18,7 @@ export default function PillarsSection() {
             title="Sustainability First"
             desc="Every kilometer driven by our EV fleet is a step toward cleaner air and a healthier Rajasthan."
             // Optimized: Added &w=1000&q=75 for a balance of quality and speed
-            img="https://images.unsplash.com/photo-1671782584185-1300064c5289?auto=format&fit=crop&q=75&w=1000"
+            img="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306765/photo-1671782584185-1300064c5289_zygrql.jpg"
           />
 
           <Card
@@ -26,7 +26,7 @@ export default function PillarsSection() {
             icon={ShieldCheck}
             title="Government Synergy"
             desc="Secure and compliant mobility solutions built for government leaders and officials."
-            img="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=75&w=600"
+            img="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306760/photo-1529107386315-e1a2ed48a620_iuw9d2.jpg"
           />
 
           <Card
@@ -34,7 +34,7 @@ export default function PillarsSection() {
             icon={Zap}
             title="Infrastructure at Scale"
             desc="We are building the electric highway across Rajasthan through high-speed EV charging hubs."
-            img="https://images.unsplash.com/photo-1548792231-0bccaf8933bb?auto=format&fit=crop&q=75&w=600"
+            img="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306756/photo-1548792231-0bccaf8933bb_vxtke9.jpg"
           />
 
           <Card
@@ -42,7 +42,7 @@ export default function PillarsSection() {
             icon={Users}
             title="Local Impact"
             desc="Creating green-tech jobs and empowering the youth of Rajasthan through the EV ecosystem."
-            img="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=75&w=1000"
+            img="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306758/photo-1521737604893-d14cc237f11d_poj2hr.jpg"
           />
         </div>
       </div>

@@ -9,7 +9,7 @@ const InfraHero = () => {
 
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1620002093398-8f16081af5ee?w=1600&auto=format&fit=crop&q=80"
+          src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306800/photo-1620002093398-8f16081af5ee_pzul1j.jpg"
           alt="High-Speed EV Charging Hub"
           className="w-full h-full object-cover grayscale brightness-[0.2]"
         />

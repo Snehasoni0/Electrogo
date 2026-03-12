@@ -6,22 +6,22 @@ const LeadershipSection = () => {
     {
       name: "Alma Derricks",
       role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+      image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306763/photo-1573496359142-b8d87734a5a2_agxdod.jpg",
     },
     {
       name: "Richard Dickson",
       role: "CSO",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+      image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306756/photo-1472099645785-5658abf4ff4e_m11xp0.jpg",
     },
     {
       name: "Walter Levitt",
       role: "Head of Sustainability",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+      image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306756/photo-1519085360753-af0119f7cbe7_wh1chu.jpg",
     },
     {
       name: "Giles Richardson",
       role: "Operations Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+      image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306756/photo-1507003211169-0a1dd7228f2d_ehisq1.jpg",
     }
   ];
 

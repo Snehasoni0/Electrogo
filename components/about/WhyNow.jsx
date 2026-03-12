@@ -45,7 +45,7 @@ const WhyNow = () => {
 
             <div className="relative z-10 w-full group">
                 <img
-                    src="https://images.unsplash.com/photo-1671782584185-1300064c5289"
+                    src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306765/photo-1671782584185-1300064c5289_zygrql.jpg"
                     alt="Rajasthan EV Infrastructure"
                     className="rounded-[32px] shadow-2xl object-cover w-full h-[400px] grayscale group-hover:grayscale-0 transition-all duration-700"
                 />

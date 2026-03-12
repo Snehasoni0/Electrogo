@@ -11,13 +11,7 @@ const RouteRoadmapSplit = () => {
         whileHover={{ flex: 1.2 }}
         className="relative flex-1 min-h-[50vh] md:min-h-0 bg-slate-900 group transition-all duration-700 ease-in-out border-b md:border-b-0 md:border-r border-white/5 overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-20 grayscale group-hover:scale-110 transition-transform duration-[10s]">
-          <img 
-            src="https://images.unsplash.com/photo-1545147986-a9d6f210df77?q=80&w=1000&auto=format&fit=crop" 
-            alt="Highway" 
-            className="w-full h-full object-cover"
-          />
-        </div>
+        
         
         <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-20">
           <div className="space-y-4 md:space-y-6">
@@ -57,13 +51,6 @@ const RouteRoadmapSplit = () => {
         whileHover={{ flex: 1.2 }}
         className="relative flex-1 min-h-[50vh] md:min-h-0 bg-white group transition-all duration-700 ease-in-out overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-10 grayscale group-hover:scale-110 transition-transform duration-[10s]">
-          <img 
-            src="https://images.unsplash.com/photo-1602643163983-ed0babc39797?q=80&w=1000&auto=format&fit=crop" 
-            alt="Heritage City" 
-            className="w-full h-full object-cover"
-          />
-        </div>
 
         <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-20">
           <div className="space-y-4 md:space-y-6">

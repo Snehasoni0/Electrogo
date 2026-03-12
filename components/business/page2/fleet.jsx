@@ -11,21 +11,21 @@ const FleetShowcase = () => {
       name: "Tata Nexon EV",
       tier: "Executive Class",
       tagline: "The Protocol Standard",
-      image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1200&auto=format&fit=crop&q=80", 
+      image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306799/photo-1619767886558-efdc259cde1a_lfx7vn.jpg", 
       specs: { range: "453 KM", safety: "5-Star GNCAP", power: "143 PS" }
     },
     {
       name: "MG ZS EV",
       tier: "Premium Protocol",
       tagline: "Diplomatic Endurance",
-      image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1200&auto=format&fit=crop&q=80",
+      image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306799/photo-1619767886558-efdc259cde1a_lfx7vn.jpg",
       specs: { range: "461 KM", safety: "ASIL-K Certified", power: "176 PS" }
     },
     {
       name: "BYD Atto 3",
       tier: "Diplomatic Suite",
       tagline: "Blade Battery Tech",
-      image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1200&auto=format&fit=crop&q=80",
+      image: "https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306799/photo-1619767886558-efdc259cde1a_lfx7vn.jpg",
       specs: { range: "521 KM", safety: "Level 2 ADAS", power: "204 PS" }
     }
   ];

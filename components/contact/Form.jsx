@@ -145,7 +145,7 @@ const InquirySection = () => {
           >
             <div className="relative h-[720px] w-full bg-slate-100 overflow-hidden rounded-t-[18rem] rounded-[18rem]shadow-2xl border-8 border-white">
               <img
-                src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=cro"
+                src="https://res.cloudinary.com/dxaj4o4xh/image/upload/v1773306964/photo-1593941707882-a5bba14938c7_bhxfpg.jpg"
                 alt="Modern Architecture"
                 className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-1000"
               />

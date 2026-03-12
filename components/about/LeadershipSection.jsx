@@ -1,4 +1,4 @@
-import React from 'react';
+'use client'
 import { Linkedin, Twitter, Globe } from 'lucide-react';
 
 const LeadershipSection = () => {

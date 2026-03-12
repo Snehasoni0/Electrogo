@@ -1,4 +1,4 @@
-import React from 'react';
+'use client'
 import { Target, MessageSquare, Files, PieChart, Shield, Zap, Globe, Heart } from 'lucide-react';
 
 const MissionAndValues = () => {
